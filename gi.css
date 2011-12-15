@@ -120,14 +120,14 @@ a {
   padding:0 30px;
 }
 
-#nav .instinct_logo {
+#nav .i_logo {
   margin:10px 0;
   display:block;
   width:200px;
   float:left;
 }
 
-#nav .instinct_logo img {
+#nav .i_logo img {
   height:50px;
 }
 
@@ -336,12 +336,12 @@ a {
 
 /* How It Works */
 
-#how-it-works {
+#what-is {
   width:100%;
   overflow:hidden;
 }
 
-#how-it-works .inner {
+#what-is .inner {
   height:400px;
 }
 #map .inner {
@@ -350,11 +350,11 @@ a {
 .map_embed {
   padding: 45px;
 }
-#how-it-works .header {
+#what-is .header {
   color:#0066cc;
 }
 
-#how-it-works .header .divider {
+#what-is .header .divider {
   background-position:0 0;
 }
 
@@ -560,23 +560,23 @@ a {
 
 /* About Us */
 
-#about-us {
+#contact {
   width:100%;
   background:#2f8dbc;
   position:relative;
   overflow:hidden;
 }
 
-#about-us .header {
+#contact .header {
   text-shadow:3px 3px 0 #205a7d;
   color:#eee;
 }
 
-#about-us .header .divider {
+#contact .header .divider {
   background-position:0 -12px;
 }
 
-#about-us .inner {
+#contact .inner {
   height: 650px;
 }
 .contact {
