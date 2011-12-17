@@ -306,7 +306,7 @@ a {
   height:400px;
 }
 #map .inner {
-  height: 450px;
+  height: 510px;
 }
 .map_embed {
   padding: 45px;
@@ -316,10 +316,16 @@ a {
 }
 #map p {
   position: relative;
-  top: 80px;
+  top: 50px;
   text-align: left;
   font-size: 28px;
 }
+#map img {
+  
+
+  margin: 38px;
+}
+
 #what-is .header .divider {
   background-position:0 0;
 }
