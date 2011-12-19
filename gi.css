@@ -247,6 +247,26 @@ a {
   bottom: 210px;
 }
 
+@-webkit-keyframes pulse {
+  from {
+  opacity: 0.3;
+  font-size: 100%;
+}
+to {
+  opacity: 1.0;
+  font-size: 200%;
+}
+}
+
+.main-logo {
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+}
+
+
 #home .learn_more:hover {
   background-position:0 -50px;
 }
@@ -303,7 +323,7 @@ a {
 }
 
 #what-is .inner {
-  height:400px;
+  height:450px;
 }
 #map .inner {
   height: 510px;
@@ -321,7 +341,7 @@ a {
   font-size: 28px;
 }
 #map img {
-  
+
 
   margin: 38px;
 }
@@ -332,7 +352,8 @@ a {
 
 .description {
   float:left;
-  text-align:left;
+
+  text-align: justify;
   clear:both;
   font-family:"League Gothic";
   color:#2f8dbc;
@@ -342,6 +363,28 @@ a {
   width:100%;
   display:block;
 }
+
+.notes {
+  float:left;
+  text-align: left;
+  font-size: 18px;
+  padding: 25px;
+  background-color: lightsalmon;
+  border-radius: 40px;
+  border: 1px solid silver;
+  box-shadow: 0 0 10px orange;
+  position: relative;
+  left: 276px;
+  -webkit-transform: rotateZ(0deg);
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+}
+
+.notes:hover {
+  -webkit-transform: rotateZ(5deg);
+  -webkit-transition: -webkit-transform 2s ease-in-out;
+}
+
+
 
 /* -- Feature List -- */
 
