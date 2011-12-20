@@ -340,9 +340,8 @@ to {
   text-align: left;
   font-size: 28px;
 }
+
 #map img {
-
-
   margin: 38px;
 }
 
@@ -375,12 +374,13 @@ to {
   box-shadow: 0 0 10px orange;
   position: relative;
   left: 276px;
+  top:120px;
   -webkit-transform: rotateZ(0deg);
   -webkit-transition: -webkit-transform 1s ease-in-out;
 }
 
 .notes:hover {
-  -webkit-transform: rotateZ(5deg);
+  -webkit-transform: rotateZ(720deg);
   -webkit-transition: -webkit-transform 2s ease-in-out;
 }
 
