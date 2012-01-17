@@ -64,7 +64,7 @@ body {
 
 a {
   text-decoration:none;
-  color: #4cb1df;
+  color: #0000cc;
 }
 
 .clear {
@@ -373,10 +373,11 @@ to {
   border: 1px solid silver;
   box-shadow: 0 0 10px orange;
   position: relative;
-  left: 276px;
+  left: 229px;
   top:120px;
   -webkit-transform: rotateZ(0deg);
   -webkit-transition: -webkit-transform 1s ease-in-out;
+  font-size: 140%
 }
 
 .notes:hover {
