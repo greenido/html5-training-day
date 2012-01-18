@@ -381,7 +381,7 @@ to {
 }
 
 .notes:hover {
-  -webkit-transform: rotateZ(720deg);
+  -webkit-transform: rotateZ(10deg);
   -webkit-transition: -webkit-transform 2s ease-in-out;
 }
 
