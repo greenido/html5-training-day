@@ -373,7 +373,7 @@ to {
   border: 1px solid silver;
   box-shadow: 0 0 10px orange;
   position: relative;
-  left: 229px;
+  left: 355px;
   top:120px;
   -webkit-transform: rotateZ(0deg);
   -webkit-transition: -webkit-transform 1s ease-in-out;
@@ -595,9 +595,25 @@ to {
 #about-us .inner {
   height: 650px;
 }
+.contact-tlv {
+  position: relative;
+  left:250px;
+
+}
+.contact-tlv img {
+  transform: rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -webkit-transform: rotate(-15deg);Ï
+}
 .contact {
   position: relative;
-  left:150px;
+  left:100px;
+}
+.contact img { 
+  transform: rotate(15deg);
+  -moz-transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+  Ï  
 }
 
 .team {
