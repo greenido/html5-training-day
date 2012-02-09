@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title data-config-title="">Great Web Applications</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|Droid+Sans+Mono&v2">
+<meta name="viewport" content="width=1100,height=750"><meta name="apple-mobile-web-app-capable" content="yes"><script type="text/javascript" charset="UTF-8" src="js/{common,util}.js"></script></head>
+
+<body style="display: none" class="loaded"><canvas id="cClock" width="30" height="30" class="hidden"></canvas>
+
+<section class="slides layout-regular nobackground">
+
+  <article class="title-slide current" data-slide-num="1" data-total-slides="34">
+    <div>
+      <div data-config-logo="" 
+      style="background-image: url(html5_logo_256.png); "></div>
+      <p data-config-name="">Ido Green</p>
+      <p data-config-subtitle="">Designing &amp; Building</p>
+      <h1 data-config-title="">Great Web Applications</h1>
+      <p class="info">
+        <time datetime="2012-01-18" data-config-date="">March 4,  2012</time> &nbsp; - &nbsp; <span data-config-location="">Tel Aviv, Israel</span>
+      </p>
+      <img data-config-map="" class="rounded" title="Of course we&#39;re using Geolocation!" alt="Of course we&#39;re using Geolocation!">
+    </div>
+  </article>
+
+  <article class="next" data-slide-num="2" data-total-slides="34">
+    <q>The craze for native apps is a short one and we are already seeing it on the wane.</q>
+    <div class="author">
+      <a href="http://assanka.net/content/what/2011/06/09/ft-launches-first-major-html5-mobile-news-app/">Asskana</a>
+    </div>
+  </article>
+
+  <article class="centered hidden">
+    <img src="ft-usage.png" class="centered" style="margin-top:100px;">
+    <p>Asskana built the Financial Times web app</p>
+  </article>
+
+  <article class="fill far-next" data-slide-num="3" data-total-slides="34">
+    <img class="centered" src="ftss.png" style="width: 100%;">
+    <div class="build">
+      <div class="overlayBox">
+        <ul class="build" style="margin-top: 10px;">
+          <li class="">Launched in June, 2011</li>
+          <li class="">Over <strong>1 million</strong> unique users</li>
+          <li class=""><strong>2.5</strong> times more likely to subscribe</li>
+          <li class="">Drove digital subscriptions to beyond <strong>250,000</strong></li>
+          <li class="">In January 2012, Financial Times <strong>bought Assanka</strong></li>
+          <li class="">Simplifying development with the <strong>web app as the basis for all platforms</strong></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article id="who" data-slide-num="4" data-total-slides="34" class="">
+    <h3>Who?</h3>
+    <p>
+      <img class="avatar rounded" data-config-pic="" src="https://lh4.googleusercontent.com/-YpY1A_LkwH8/AAAAAAAAAAI/AAAAAAAAGPY/hpy-JaS2PtQ/photo.jpg?sz=200">
+    </p>
+    <p>
+      <a rel="author" data-config-gplus="" target="_blank" href="http://plus.ly/greenido">
+        <img src="gprofile_button-44.png" width="44" height="44">
+      </a> +<a rel="author" data-config-gplus="" target="_blank" href="http://plus.ly/greenido"><span data-config-name="">Ido Green</span></a>
+    </p>
+    <br>
+    <p>
+      <a rel="author" data-config-twitter="" target="_blank" style="margin-left:-8px;" href="http://twitter.com/greenido">
+        <img src="twitter_newbird_blue.png" width="58" height="58">
+      </a> @ <a rel="author" data-config-twitter="" target="_blank" style="margin-left:-8px;" href="http://twitter.com/greenido"><span data-config-twitter="">greenido</span></a>
+    </p>
+    <p>
+      <a rel="author" data-config-blog="" target="_blank" href="http://greenido.wordpress.com/"><span data-config-blog="">http://greenido.wordpress.com/</span></a>
+    </p>
+  </article>
+
+  <article data-slide-num="5" data-total-slides="34" class="">
+    <h3>Agenda</h3>
+    <ul class="build fade" style="font-size:150%;line-height:175%;">
+      <li class="fade">Defining the modern web app</li>
+      <li class="fade">Designing a modern web app</li>
+      <li class="fade">Best practices for a great app</li>
+    </ul>
+  </article>
+
+  <article class="segue" data-slide-num="6" data-total-slides="34">
+    <h2>Defining the modern web app</h2>
+  </article>
+
+  <article class="hidden">
+    <h3></h3>
+    <div class="build" style="margin-top: 150px;">
+      <div class="formula">The Power Of The Cloud</div>
+      <div class="formula">+</div>
+      <div class="formula" style="border-bottom: 1px solid black;padding-bottom: 25px;">Native &amp; Desktop Experiences</div>
+      <div class="formula" style="margin-top:40px;"><strong>Modern Web Apps</strong></div>
+    </div>
+  </article>
+
+  <article data-slide-num="7" data-total-slides="34" class="">
+    <h3></h3>
+    <div class="build" style="margin-top: 150px;">
+      <div class="formula to-build">The Power Of HTML5</div>
+      <div class="formula to-build">+</div>
+      <div class="formula to-build" style="border-bottom: 1px solid black;padding-bottom: 25px;">Native &amp; Desktop Experiences</div>
+      <div class="formula to-build" style="margin-top:40px;"><strong>Modern Web Apps</strong></div>
+    </div>
+  </article>
+
+  <article class="fill build hidden">
+    <img src="h5_logo.png">
+  </article>
+
+  <article class="fill" data-slide-num="8" data-total-slides="34">
+    <img src="springpad.png">
+    <div class="source"><a href="http://bit.ly/p7G6IA">http://bit.ly/p7G6IA</a></div>
+    <!-- screen shot from Chrome Web Store app -->
+  </article>
+
+  <article class="fill" data-slide-num="9" data-total-slides="34">
+    <img src="gojee.png">
+    <div class="source"><a href="http://bit.ly/oZEqJh">http://bit.ly/oZEqJh</a></div>
+    <!-- screen shot from Chrome Web Store app -->
+  </article>
+
+  <article class="fill" data-slide-num="10" data-total-slides="34">
+    <img src="280slides.png">
+    <div class="source"><a href="http://bit.ly/qSIzFl">http://bit.ly/qSIzFl</a></div>
+    <!-- screen shot from Chrome Web Store app -->
+  </article>
+
+  <article class="fill" data-slide-num="11" data-total-slides="34">
+    <a href="https://read.amazon.com/" target="_blank">
+      <img src="kindless.png">
+      <div class="source">https://read.amazon.com/</div>
+    </a>
+  </article>
+
+  <article class="" data-slide-num="12" data-total-slides="34">
+    <h3>Tying It All Together</h3>
+    <ul class="build">
+      <li class="to-build">Self Contained</li>
+      <li class="to-build">Functional</li>
+      <li class="to-build">Immersive</li>
+      <li class="to-build">Interactive</li>
+      <li class="to-build">Works Offline</li>
+      <li class="to-build">Device Aware</li>
+      <li class="to-build">App Styled Navigation</li>
+      <li class="to-build">Client Side Architecture</li>
+    </ul>
+  </article>
+
+  <article class="demo centered hidden">
+    <h2>IO Reader</h2>
+    <div style="position:absolute;bottom:105px;padding-top:4px;">
+      <a data-config-ioreaderdemo="" target="_blank" style="font-size: 100%">Demo</a>
+      <span style="font-size: 70%">[<a data-config-ioreadersrc="" target="_blank">Source</a>]</span>
+    </div>
+  </article>
+
+  <article class="segue" data-slide-num="13" data-total-slides="34">
+    <h2>Designing modern web apps</h2>
+  </article>
+
+  <article data-slide-num="14" data-total-slides="34">
+    <img src="kindle-supported.png" class="centered">
+    <div class="build">
+      <div class="overlayBox to-build">
+        <ul class="build fade" style="margin-top: 10px;">
+          <li class="to-build fade">Does it cost more to support browser X than it generates?</li>
+          <li class="to-build fade">Is the browser older than the mayo in your fridge?</li>
+          <li class="to-build fade">Is an exorcist required to debug the app's behavior?</li>
+        </ul>
+        <!--<p class="build"><strong>It's OK to be explicit about the browsers you do, and do not support</strong></p>-->
+        <p class="centered build" style="font-size:125%;"><strong class="to-build">Be explicit about the browsers you support</strong></p>
+      </div>
+    </div>
+  </article>
+
+  <article class="nobackground" data-slide-num="15" data-total-slides="34">
+    <div class="build">
+      <div class="to-build">
+        <img src="messofwires.png" style="position:absolute;margin: -35px 0px 0px -60px;border-radius: 10px; z-index: -1;">
+        <!-- iStock_000015313683Medium -->
+      </div>
+      <div class="to-build">
+        <h3 class="fakeFill">MVC Frameworks - Prevent Spaghetti Code</h3>
+          <div class="overlayBox centered" style="height:525px;margin-top:-50px">
+            <img src="mvc-c.png" alt="MVC controller"><br>
+            <div style="margin-top:25px;">
+              <img class="arrow-llur" src="arrow.png"> <img src="mvc-v.png" alt="view"> <img class="arrow-lr" src="arrow.png"> <img src="mvc-m.png" alt="model"> <img class="arrow-lrul" src="arrow.png">
+            </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="hidden">
+    <h3>MVC frameworks</h3>
+    <p class="centered">
+      <a href="http://bit.ly/nltwjB" target="_blank"><img src="sproutcore.png" style="vertical-align:middle;"></a><br><br>
+      <a href="http://bit.ly/pLINm5" target="_blank"><img src="backbone.png" style="vertical-align:middle;margin-right:20px;"></a>
+      <a href="http://bit.ly/pv4o6j" target="_blank"><img src="extjs.png" style="vertical-align:middle;margin-left:20px;"></a>
+    </p>
+    <div class="build" style="margin-top:40px;">
+      <div>
+        <h3>CSS frameworks</h3>
+        <p class="centered" style="margin-top:-25px;">
+          <a href="http://bit.ly/ozkwJq" target="_blank"><img src="less.png" style="vertical-align:middle;margin-right:20px;"></a>
+          <a href="http://bit.ly/pIuMGe" target="_blank"><img src="sass.png" style="vertical-align:middle;margin-left:20px;"></a>
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <article class="segue" data-slide-num="16" data-total-slides="34">
+    <h2>Best practices for a great app</h2>
+  </article>
+
+  <article class="fill" data-slide-num="17" data-total-slides="34">
+    <h3>Make it easy to try &amp; use</h3>
+    <img src="barriers2.png">
+    <div class="build">
+      <div class="overlayBox to-build" style="margin-top:50px;">
+        <ul class="build fade">
+          <li class="to-build fade">Make it <strong>easy to try without signing up</strong> first</li>
+          <li class="to-build fade">Provide an <strong>OpenID</strong> sign-up option</li>
+          <li class="to-build fade">Try the <a href="http://bit.ly/qrM2V0">Google Identity Toolkit</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- iStock_000002174820Medium -->
+    <!--<img src="images/gitk_ss.png" style="z-index:100;width:685px;height:293px;min-height:293px;min-width:685px;margin-top:175px;margin-left:60px;">-->
+  </article>
+
+  <article class="smaller" onslideenter="matchMediaSlideLoad();" onslideleave="matchMediaSlideUnLoad()" data-slide-num="18" data-total-slides="34">
+    <h3>Use responsive layout for different form factors</h3>
+    <div class="centered" style="height:175px;">
+      <img id="mqPhone" src="nexuss.jpg" class="device"><img id="mqTablet" src="ipad.png" class="device"><img id="mqLaptop" src="laptop.png" class="device">
+    </div>
+    <div class="build fade" style="margin-bottom:0px;">
+      <div class="to-build fade">
+        <p style="margin-top:2px;">Media Queries for Style Sheets</p>
+        <pre style="margin-top:5px;margin-bottom:10px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="pln"> </span><span class="atn">media</span><span class="pun">=</span><span class="atv">"all"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"/static/css/base.min.css"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="pln"> </span><span class="atn">media</span><span class="pun">=</span><span class="atv">"only screen and (max-width: 800px)"</span><span class="pln">
+  </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"/static/css/mobile.min.css"</span><span class="pln"> </span><span class="tag">/&gt;</span></pre>
+      </div>
+      <div class="to-build fade">
+        <p>Testing CSS media queries in JavaScript with <code>window.<strong>matchMedia()</strong></code></p>
+        <pre style="margin-top:2px;margin-bottom:20px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">matchMedia</span><span class="pun">(</span><span class="str">'only screen and (max-width: 480px)'</span><span class="pun">).</span><span class="pln">matches</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="com">// Asynchronously provide experience optimized for phone</span><span class="pln">
+</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">matchMedia</span><span class="pun">(</span><span class="str">'only screen and (min-width: 481px) and '</span><span class="pln"> </span><span class="pun">+</span><span class="pln">
+                             </span><span class="str">'(max-width: 1024px)'</span><span class="pun">).</span><span class="pln">matches</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="com">// Asynchronously provide experience optimized for table or smaller screen</span><span class="pln">
+</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="com">// Asynchronously provide full screen experience</span><span class="pln">
+</span><span class="pun">}</span></pre>
+      </div>
+      <div class="to-build fade">
+        <p><a href="http://bit.ly/pSXbYW" target="_blank">http://formfactorjs.com</a></p>
+      </div>
+    </div>
+    <script type="text/javascript" async="" src="js/ga.js"></script><script type="text/javascript">
+      (function() {
+
+        function onWinResize(e) {
+          if (window.matchMedia('only screen and (max-width: 480px)').matches) {
+            document.getElementById("mqPhone").classList.add("mqHighlight");
+            document.getElementById("mqTablet").classList.remove("mqHighlight");
+            document.getElementById("mqLaptop").classList.remove("mqHighlight");
+          } else if (window.matchMedia('only screen and (min-width: 481px) and (max-width: 1024px)').matches) {
+            document.getElementById("mqPhone").classList.remove("mqHighlight");
+            document.getElementById("mqTablet").classList.add("mqHighlight");
+            document.getElementById("mqLaptop").classList.remove("mqHighlight");
+          } else {
+            document.getElementById("mqPhone").classList.remove("mqHighlight");
+            document.getElementById("mqTablet").classList.remove("mqHighlight");
+            document.getElementById("mqLaptop").classList.add("mqHighlight");
+          }
+        }
+
+        window.matchMediaSlideLoad = function(e) {
+          onWinResize('x');
+          window.addEventListener('resize', onWinResize, false);
+        };
+
+        window.matchMediaSlideUnLoad = function(e) {
+          window.removeEventListener('resize', onWinResize, false);
+        };
+      }());
+    </script>
+
+  </article>
+
+  <article data-slide-num="19" data-total-slides="34">
+    <h3>Allow for deep linking &amp; single page navigation</h3>
+    <div class="build fade">
+      <div class="to-build fade">
+        <pre style="margin-bottom: 20px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="kwd">function</span><span class="pln"> updateHash</span><span class="pun">(</span><span class="pln">push</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">push</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> slideNo </span><span class="pun">=</span><span class="pln"> curSlide </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> hash </span><span class="pun">=</span><span class="pln"> </span><span class="str">'#'</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> slideNo</span><span class="pun">;</span><span class="pln">
+    window</span><span class="pun">.</span><span class="pln">history</span><span class="pun">.</span><span class="pln">pushState</span><span class="pun">(</span><span class="pln">slideNo</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Slide '</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> slideNo</span><span class="pun">,</span><span class="pln"> hash</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">};</span></pre>
+        </div>
+        <div class="to-build fade">
+          <pre style="margin-bottom: 20px;margin-top:10px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="pln">window</span><span class="pun">.</span><span class="pln">addEventListener</span><span class="pun">(</span><span class="str">'popstate'</span><span class="pun">,</span><span class="pln"> handlePopState</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></pre>
+        </div>
+        <div class="to-build fade">
+          <pre style="margin-bottom: 20px;margin-top:10px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="kwd">function</span><span class="pln"> handlePopState</span><span class="pun">(</span><span class="kwd">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">event</span><span class="pun">.</span><span class="pln">state </span><span class="pun">!=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    curSlide </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">event</span><span class="pun">.</span><span class="pln">state </span><span class="pun">-</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+    updateSlides</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">};</span></pre>
+          <p><a href="http://bit.ly/pXCfY6" target="_blank">http://www.leviroutes.com</a></p>
+        </div>
+      </div>
+
+  </article>
+
+  <article data-slide-num="20" data-total-slides="34">
+    <h3 id="offline-head">Make it work offline</h3>
+    <div class="build fade">
+      <div style="margin-top:20px;" class="to-build fade">
+        <p>Use a primarily client side architect model for your app</p>
+        <small>Server side rendering doesn't work very well when offline!</small>
+        <!--<pre style="margin-top:5px;margin-bottom:20px;">&nbsp;</pre>-->
+      </div>
+      <div style="margin-top:20px;" class="to-build fade">
+        <p>Application Cache to enable the offline scenario</p>
+        <pre style="margin-top:5px;margin-bottom:20px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="tag">&lt;html</span><span class="pln"> </span><b><span class="atn">manifest</span><span class="pun">=</span><span class="atv">"cache.appcache"</span></b><span class="tag">&gt;</span></pre>
+      </div>
+      <div class="to-build fade">
+        <p>Store and cache data on the client</p>
+        <pre style="margin-top:5px;margin-bottom:10px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="pln">window</span><span class="pun">.</span><span class="pln">requestFileSystem</span><span class="pun">(</span><span class="pln">PERSISTENT</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1048576</span><span class="pun">,</span><span class="pln"> initFs</span><span class="pun">,</span><span class="pln"> fsError</span><span class="pun">);</span></pre>
+        <pre style="margin-bottom:10px;margin-top:0px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="kwd">var</span><span class="pln"> idbRequest </span><span class="pun">=</span><span class="pln"> window</span><span class="pun">.</span><span class="pln">indexedDB</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="str">'Database Name'</span><span class="pun">);</span></pre>
+        <pre style="margin-bottom:20px;margin-top:0px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="pln">localStorage</span><span class="pun">[</span><span class="str">"key"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"value"</span><span class="pun">;</span></pre>
+        
+      </div>
+    </div>
+  </article>
+
+  <article data-slide-num="22" data-total-slides="34">
+    <h3>Persist users data</h3>
+    <textarea id="text-area-input" placeholder="Type your text here..." class="data-persistence-demo"></textarea>
+    <p id="data-persistence-debug"></p>
+    <div>
+      <button id="data-persistence-restore" disabled="disabled" onclick="FormPersistenceRestore(&#39;gddAppsForm&#39;);">Restore auto-saved</button>
+      <button id="data-persistence-clear" disabled="disabled" onclick="FormPersistenceClear(&#39;gddAppsForm&#39;);">Clear auto-saved data</button>
+    </div>
+    <pre style="margin-bottom: 10px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="kwd">var</span><span class="pln"> elems </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">querySelectorAll</span><span class="pun">(</span><span class="str">"textarea, input"</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> len </span><span class="pun">=</span><span class="pln"> elems</span><span class="pun">.</span><span class="pln">length</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> len</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">var</span><span class="pln"> elem </span><span class="pun">=</span><span class="pln"> elems</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln">
+  elem</span><span class="pun">.</span><span class="pln">addEventListener</span><span class="pun">(</span><span class="str">"input"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">item</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    localStorage</span><span class="pun">[</span><span class="pln">formName </span><span class="pun">+</span><span class="pln"> </span><span class="str">"-"</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> item</span><span class="pun">.</span><span class="pln">srcElement</span><span class="pun">.</span><span class="pln">id</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln">
+      item</span><span class="pun">.</span><span class="pln">srcElement</span><span class="pun">.</span><span class="pln">value</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> debug </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"data-persistence-debug"</span><span class="pun">);</span><span class="pln">
+    debug</span><span class="pun">.</span><span class="pln">innerHTML </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Last auto-saved at: "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Date</span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">},</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></pre>
+    <p>
+      <a href="http://bit.ly/pNR0VI">LawnChair - simple json storage</a>
+    </p>
+    <script src="js/form-persist.js"></script>
+    <script type="text/javascript">
+      FormPersistenceSetup("gddAppsForm");
+      if (FormPersistenceCanRestore("gddAppsForm")) {
+        var elem = document.getElementById("data-persistence-restore");
+        elem.removeAttribute("disabled");
+        elem = document.getElementById("data-persistence-clear");
+        elem.removeAttribute("disabled");
+      }
+    </script>
+  </article>
+
+  <article data-slide-num="23" data-total-slides="34">
+    <h3>Make entering information easy &amp; understandable</h3>
+    <div class="build fade">
+      <pre class="form-inputs prettyprint drop-shadow curved curved-hz-2 to-build fade"><input type="text" required=""><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><b><span class="atn">required</span></b><span class="pln"> </span><span class="tag">/&gt;</span></pre>
+      <pre class="form-inputs prettyprint drop-shadow curved curved-hz-2 to-build fade"><input type="email" value="some@email.com"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">email</span></b><span class="atv">"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"some@email.com"</span><span class="pln"> </span><span class="tag">/&gt;</span></pre>
+      <pre class="form-inputs prettyprint drop-shadow curved curved-hz-2 to-build fade"><input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">date</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">min</span></b><span class="pun">=</span><span class="atv">"2010-08-14"</span><span class="pln"> </span><b><span class="atn">max</span></b><span class="pun">=</span><span class="atv">"2011-08-14"</span><span class="pln">
+</span><span class="atn">value</span><span class="pun">=</span><span class="atv">"2010-08-14"</span><span class="tag">/&gt;</span></pre>
+      <pre class="form-inputs prettyprint drop-shadow curved curved-hz-2 to-build fade"><input type="range" min="0" max="50" value="10"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">range</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">min</span></b><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><b><span class="atn">max</span></b><span class="pun">=</span><span class="atv">"50"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"10"</span><span class="pln"> </span><span class="tag">/&gt;</span></pre>
+      <pre class="form-inputs prettyprint drop-shadow curved curved-hz-2 to-build fade"><input results="10" type="search" placeholder="Search..."><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">search</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">results</span></b><span class="pun">=</span><span class="atv">"10"</span><span class="pln"> </span><b><span class="atn">placeholder</span></b><span class="pun">=</span><span class="atv">"Search..."</span><span class="pln"> </span><span class="tag">/&gt;</span></pre>
+      <pre class="form-inputs prettyprint drop-shadow curved curved-hz-2 to-build fade"><input type="tel" placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">tel</span></b><span class="atv">"</span><span class="pln">  </span><b><span class="atn">placeholder</span></b><span class="pun">=</span><span class="atv">"(555) 555-5555"</span><span class="pln">
+ </span><b><span class="atn">pattern</span></b><span class="pun">=</span><span class="atv">"^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"</span><span class="pln"> </span><span class="tag">/&gt;</span></pre>
+      <pre class="form-inputs prettyprint drop-shadow curved curved-hz-2 to-build fade"><input type="color" placeholder="e.g. #bbbbbb"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">color</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">placeholder</span></b><span class="pun">=</span><span class="atv">"e.g. #bbbbbb"</span><span class="pln"> </span><span class="tag">/&gt;</span></pre>
+      <pre class="form-inputs prettyprint drop-shadow curved curved-hz-2 to-build fade"><input type="number" step="1" min="-5" max="10" value="0"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">number</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">step</span></b><span class="pun">=</span><span class="atv">"1"</span><span class="pln"> </span><b><span class="atn">min</span></b><span class="pun">=</span><span class="atv">"-5"</span><span class="pln"> </span><b><span class="atn">max</span></b><span class="pun">=</span><span class="atv">"10"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="tag">/&gt;</span></pre>
+    </div>
+  </article>
+
+  <article data-slide-num="24" data-total-slides="34">
+    <h3>Let the user tell you what they want</h3>
+    <pre class="prettyprint drop-shadow curved curved-hz-2"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">x-webkit-speech</span><span class="pln"> </span><span class="tag">/&gt;</span></pre>
+    <input id="speech-input-textbox" type="text" x-webkit-speech="" style="width:400px;height:50px;font-size:135%;margin-left:auto;margin-right:auto;display:block;">
+    <div class="build">
+      <div class="to-build">
+        <pre class="prettyprint drop-shadow curved curved-hz-2"><span class="kwd">function</span><span class="pln"> startSearch</span><span class="pun">(</span><span class="kwd">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">event</span><span class="pun">.</span><span class="pln">target</span><span class="pun">.</span><span class="pln">results</span><span class="pun">.</span><span class="pln">length </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> second </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">event</span><span class="pun">.</span><span class="pln">target</span><span class="pun">.</span><span class="pln">results</span><span class="pun">[</span><span class="lit">1</span><span class="pun">].</span><span class="pln">utterance</span><span class="pun">;</span><span class="pln">
+    document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"second_best"</span><span class="pun">).</span><span class="pln">value </span><span class="pun">=</span><span class="pln"> second</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">event</span><span class="pun">.</span><span class="pln">target</span><span class="pun">.</span><span class="pln">form</span><span class="pun">.</span><span class="pln">submit</span><span class="pun">();</span><span class="pln">
+</span><span class="pun">}</span></pre>
+        <div id="speech-results" class="speech-results">
+        </div>
+
+        <script>
+          document.getElementById("speech-input-textbox").addEventListener("webkitspeechchange", function(event) {
+            var speechresults = document.getElementById('speech-results');
+            speechresults.innerHTML = '';
+            for (var res in event.results) {
+              speechresults.innerHTML += 'Utterance: ' + event.results[res]['utterance'] + '<br />Confidence: '
+                + event.results[res]['confidence'] + '<br /><br />';
+            }
+          }, false);
+        </script>
+      </div>
+    </div>
+  </article>
+
+  <article data-slide-num="25" data-total-slides="34">
+    <h3>Keep your user informed</h3>
+    <pre class="prettyprint drop-shadow curved curved-hz-2"><span class="kwd">function</span><span class="pln"> showNotifications</span><span class="pun">(</span><span class="pln">pic</span><span class="pun">,</span><span class="pln"> title</span><span class="pun">,</span><span class="pln"> text</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">webkitNotifications</span><span class="pun">.</span><span class="pln">checkPermission</span><span class="pun">()</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> notificationWindow </span><span class="pun">=</span><span class="pln">
+      window</span><span class="pun">.</span><span class="pln">webkitNotifications</span><span class="pun">.</span><span class="pln">createNotification</span><span class="pun">(</span><span class="pln">pic</span><span class="pun">,</span><span class="pln"> title</span><span class="pun">,</span><span class="pln"> text</span><span class="pun">);</span><span class="pln">
+    notificationWindow</span><span class="pun">.</span><span class="pln">show</span><span class="pun">();</span><span class="pln">
+
+    </span><span class="com">// close notification automatically after a timeout</span><span class="pln">
+    setTimeout</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">popup</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      popup</span><span class="pun">.</span><span class="pln">cancel</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">},</span><span class="pln"> </span><span class="lit">6000</span><span class="pun">,</span><span class="pln"> notificationWindow</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></pre>
+
+    <button id="request-not-permission-button" type="button" onclick="requestNotificationPermission();">Request Permission</button>
+    <button id="show-notification-button" type="button" onclick="showNotification();" disabled="disabled">Show Simple Notification</button>
+    <button id="show-html-notification-button" type="button" onclick="showHTMLNotification(&#39;demos/notification/notification.html&#39;);" disabled="disabled">Show HTML Notification</button>
+    <script type="text/javascript" defer="">
+      if (window.webkitNotifications) {
+        updateNotificationButtons();
+      }
+
+      function requestNotificationPermission() {
+        if (window.webkitNotifications) {
+          if (window.webkitNotifications.checkPermission() != 0) {
+            window.webkitNotifications.requestPermission(updateNotificationButtons);
+          }
+        }
+      }
+
+      function updateNotificationButtons() {
+        if (window.webkitNotifications.checkPermission() == 0) {
+          document.getElementById("show-html-notification-button").removeAttribute("disabled");
+          document.getElementById("show-notification-button").removeAttribute("disabled");
+          document.getElementById("request-not-permission-button").setAttribute("disabled", "disabled");
+        } else {
+          document.getElementById("request-not-permission-button").removeAttribute("disabled");
+        }
+      }
+
+      function showNotification() {
+        showNotifications("chrome-logo.png", "Title", "Specific packets interpreted before the BDD. Elected stack trace time boxed along assorted aspect oriented programming.");
+      }
+
+      function showHTMLNotification(url) {
+        if (window.webkitNotifications.checkPermission() == 0) {
+          //var notificationWindow = window.webkitNotifications.createNotification(pic, title, text);
+          var notificationWindow = window.webkitNotifications.createHTMLNotification(url);
+          notificationWindow.show();
+
+          // close notification automatically after a timeout
+          /*setTimeout(function(popup) {
+            popup.cancel();
+          }, 6000, notificationWindow);*/
+        }
+      }
+
+      function showNotifications(pic, title, text) {
+        if (window.webkitNotifications.checkPermission() == 0) {
+          var notificationWindow = window.webkitNotifications.createNotification(pic, title, text);
+          notificationWindow.show();
+
+          // close notification automatically after a timeout
+          setTimeout(function(popup) {
+            popup.cancel();
+          }, 6000, notificationWindow);
+        }
+      }
+    </script>
+  </article>
+
+  <article data-slide-num="26" data-total-slides="34">
+    <h3>Treat performance like a feature</h3>
+    <div class="build fade">
+      <div style="margin-top:20px;" class="to-build fade">
+        <p>Use Application Cache to provide local caching</p>
+        <pre style="margin-top:5px;margin-bottom:20px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="tag">&lt;html</span><span class="pln"> </span><b><span class="atn">manifest</span><span class="pun">=</span><span class="atv">"cache.appcache"</span></b><span class="tag">&gt;</span></pre>
+      </div>
+      <div class="to-build fade">
+        <p>Store data locally</p>
+        <pre style="margin-top:5px;margin-bottom:10px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="pln">window</span><span class="pun">.</span><span class="pln">requestFileSystem</span><span class="pun">(</span><span class="pln">PERSISTENT</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1048576</span><span class="pun">,</span><span class="pln"> initFs</span><span class="pun">,</span><span class="pln"> fsError</span><span class="pun">);</span></pre>
+        <pre style="margin-bottom:10px;margin-top:0px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="kwd">var</span><span class="pln"> idbRequest </span><span class="pun">=</span><span class="pln"> window</span><span class="pun">.</span><span class="pln">indexedDB</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="str">'Database Name'</span><span class="pun">);</span></pre>
+        <pre style="margin-bottom:20px;margin-top:0px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="pln">localStorage</span><span class="pun">[</span><span class="str">"key"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"value"</span><span class="pun">;</span></pre>
+        
+      </div>
+      <div class="to-build fade">
+        <p>Use CSS3 transitions, transforms and animations</p>
+        <pre style="margin-top:5px;margin-bottom:20px;" class="transition-demo prettyprint drop-shadow curved curved-hz-2"><span class="pln">transition</span><span class="pun">:</span><span class="pln"> all </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span></pre>
+      </div>
+      <div class="to-build fade">
+        <p>Use WebWorkers for non-blocking JavaScript</p>
+        <pre style="margin-top:5px;margin-bottom:20px;" class="prettyprint drop-shadow curved curved-hz-2"><span class="kwd">var</span><span class="pln"> worker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Worker</span><span class="pun">(</span><span class="str">'myworker.js'</span><span class="pun">);</span></pre>
+        <p style="font-size:70%;">More great tips at <a href="http://bit.ly/rizNVE" target="_blank">http://bit.ly/rizNVE</a></p>
+      </div>
+    </div>
+  </article>
+
+  <article class="fill" data-slide-num="27" data-total-slides="34">
+    <h2 class="transparentBar">It should all just work, <strong>right</strong>?</h2>
+    <div class="build">
+      <div class="to-build">
+        <img src="polyfill.png">
+          <a class="transparentBar build" style="position:absolute;bottom:100px;padding-top:4px;" href="http://bit.ly/HTML5PolyFills">HTML5 Cross Browser Polyfills</a>
+      </div>
+    </div>
+  </article>
+
+  <article data-slide-num="28" data-total-slides="34">
+    <h3>Chrome Frame</h3>
+    <a href="http://bit.ly/nJjfDS" style="text-decoration:none;">
+
+      <img src="chrome-frame.png" class="centered" style="width: 600px;">
+      <div class="build">
+
+        <pre class="chrome-frame prettyprint drop-shadow curved curved-hz-2 to-build"><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">http-equiv</span><span class="pun">=</span><span class="atv">"X-UA-Compatible"</span><span class="pln"> </span><span class="atn">content</span><span class="pun">=</span><span class="atv">"IE=Edge,chrome=1"</span><span class="tag">&gt;</span></pre>
+      </div>
+    </a>
+    <!-- image from iStockPhoto iStock_000006291377Small -->
+  </article>
+
+  <article class="fill hidden">
+    <img src="libraries.png">
+    <h2 class="transparentBar">Other helpful libraries</h2>
+    <div class="build fade">
+      <p class="transparentBar" style="position:absolute;bottom:100px;padding-top:4px;">
+        <a href="http://twitter.github.com/bootstrap/" class="fade">Bootstrap,</a>
+        <a href="http://walmartlabs.github.com/thorax/" class="fade">Thorax,</a>
+        <a href="http://documentcloud.github.com/underscore/" class="fade">Underscore</a>
+      </p>
+    </div>
+  </article>
+
+  <article class="segue" data-slide-num="29" data-total-slides="34">
+    <h2>One last thing...</h2>
+  </article>
+
+  <article class="build nobackground" data-slide-num="30" data-total-slides="34">
+    <q class="casestudy to-build" style="font-size:64pt;font-weight:bold">Aim for a great experience, everything else will follow.</q>
+  </article>
+
+  <article class="fill nobackground" data-slide-num="31" data-total-slides="34">
+    <h2 class="shadow-banner">chromestatus.com</h2>
+    <iframe src="http://chromestatus.com"></iframe>
+  </article>
+
+  <article class="nobackground fill" data-slide-num="32" data-total-slides="34">
+    <h2 class="shadow-banner">HTML5Rocks.com</h2>
+    <iframe src="http://HTML5Rocks.com"></iframe>
+  </article>
+
+  <article class="hidden">
+    <h3>Resources</h3>
+    <h4 style="margin-bottom: 10px;">Developer Guides</h4>
+    <ul style="margin-top:10px;">
+      <li>Chrome Web Store Developer Guides <a href="http://bit.ly/r3K8bm" target="_blank">http://bit.ly/r3K8bm</a></li>
+      <li>Tutorial <a href="http://bit.ly/pYwzkY" target="_blank">http://bit.ly/pYwzkY</a></li>
+      <li>Background - Extending your app's life <a href="http://bit.ly/pc5HiT" target="_blank">http://bit.ly/pc5HiT</a></li>
+      <li>Using the Notifications API <a href="http://bit.ly/qNfeeN" target="_blank">http://bit.ly/qNfeeN</a></li>
+      <li>OpenID &amp; Identifying Your User <a href="http://bit.ly/oqsAfI" target="_blank">http://bit.ly/oqsAfI</a></li>
+    </ul>
+    <h4 style="margin-bottom: 10px;">Best Practices</h4>
+    <ul style="margin-top: 10px;">
+      <li>What makes for a great web app? <a href="http://bit.ly/nJWZQA">http://bit.ly/nJWZQA</a></li>
+      <li>Anatomy of a Great Chrome Web Store Listing <a href="http://bit.ly/iUdFLb" target="_blank">http://bit.ly/iUdFLb</a></li>
+    </ul>
+  </article>
+
+  <article class="closing-slide" data-slide-num="33" data-total-slides="34">
+    <div>
+      <div data-config-logo="" style="background-image: url(html5_logo_256.png); "></div>
+      <p id="end-thanks">Thanks!</p>
+      <h3 id="end-questions">Questions?</h3>
+      <p>
+        <a rel="author" data-config-gplus="" target="_blank" href="http://plus.ly/greenido">+<span data-config-name="">Ido Green</span></a>
+        <a rel="author" data-config-twitter="" target="_blank" href="http://twitter.com/greenido">@<span data-config-twitter="">greenido</span></a>
+      </p>
+      <p class="info">
+        Slides: <a data-config-slides="" target="_blank" href="http://ido-green.appspot.com"><span data-config-slides="">http://ido-green.appspot.com</span></a><br>
+        Feedback: <a data-config-feedback="" target="_blank" href="http://plus.ly/greenido"><span data-config-feedback="">http://plus.ly/greenido</span></a><br>
+      </p>
+    </div>
+  </article>
+
+  <article class="nobackground" data-slide-num="34" data-total-slides="34">
+    <a href="http://goo.gl/J6eaB" target="_blank"><img src="chrome-big.png" style="margin-top:150px;"></a>
+    <h4 style="width: 100%;text-align:center;">The web is what you make of it.</h4>
+  </article>
+
+<div class="slide-area" id="prev-slide-area"></div><div class="slide-area" id="next-slide-area"></div></section>
+
+<script src="js/config.js"></script>
+<script src="js/hide-slides.js"></script>
+<script src="js/slides.js"></script>
+<script src="js/b-js">
+</script><script src="main.js" type="text/javascript"></script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+
+
+</html>

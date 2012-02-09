@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<!--
+Copyright 2011 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Author: Eric Bidelman (ericbidelman@chromium.org)
+Modifications: Ido Green (idog@google.com)
+Date: 10/16/2011
+
+-->
+<html>
+  <head>
+    <title>Mobile Web App Stack</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|Droid+Sans+Mono&v2">
+    <link rel="icon" type="image/png" href="images/chrome-logo-tiny2.png">
+  </head>
+  <body style="display: none">
+
+    <section class="slides layout-regular">
+
+      <!--<article class='biglogo'></article>-->
+
+      <article id="slide-preflight">
+        <section class="flexcenter" style="height:98%;-webkit-box-align:start;">
+          <h1>Preflight</h1>
+          <p class="checking-compat">Checking compatibility...</p>
+          <!--<div id="feature-page-vis" class="hidden good feature">
+            <div><img src='images/icons/ok.png'/>Page Visibility API: available</div>
+          </div>
+          <div id="feature-no-page-vis" class="hidden bad feature">
+            <div><img src='images/icons/error.png'/>Page Visibility API: not supported</div>
+            <div class="explanation">
+              Your browser does not support the <a href="http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/PageVisibility/Overview.html" target="_blank">Page Visibility API</a>.
+            </div>
+          </div>
+          <div id="feature-rph" class="hidden good feature">
+            <div><img src='images/icons/ok.png'/>Custom Protocol Handlers: available</div>
+          </div>
+          <div id="feature-no-rph" class="hidden bad feature">
+            <div><img src='images/icons/error.png'/>Custom Protocol Handlers: not supported</div>
+            <div class="explanation">
+              Your browser does not support the <a href="http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/PageVisibility/Overview.html" target="_blank">Page Visibility API</a>.
+            </div>
+          </div>
+          <div id="feature-raf" class="hidden good feature">
+            <div><img src='images/icons/ok.png'/><code>requestAnimationFrame()</code>: available</div>
+          </div>
+          <div id="feature-no-raf" class="hidden bad feature">
+            <div><img src='images/icons/error.png'/><code>requestAnimationFrame()</code>: not supported</div>
+            <div class="explanation">
+              Your browser does not support <code>window.requestAnimationFrame()</code>.
+            </div>
+          </div>-->
+          <div id="feature-intelligence-apis" class="hidden good feature">
+            <div><img src='images/icons/ok.png'/>Intelligence APIs: available</div>
+          </div>
+          <div id="feature-no-intelligence-apis" class="hidden bad feature">
+            <div><img src='images/icons/error.png'/>Intelligence APIs: not supported</div>
+            <div class="explanation">
+              Your browser does not support one or more of the following APIs:
+              <code>navigator.registerProtocolHandler()</code>, <code>window.requestAnimationFrame()</code>,
+              <a href="http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/PageVisibility/Overview.html" target="_blank">Page Visibility API</a>.
+            </div>
+          </div>
+          <div id="feature-web-audio" class="hidden good feature">
+            <div><img src='images/icons/ok.png'/>Web Audio API: available</div>
+          </div>
+          <div id="feature-no-web-audio" class="hidden bad feature">
+            <div><img src='images/icons/error.png'/>Web Audio API: not supported</div>
+            <div class="explanation">
+              Your browser does not support the <a href="http://chromium.googlecode.com/svn/trunk/samples/audio/specification/specification.html" target="_blank">Web Audio API</a>.
+              You need Chrome 14+.
+            </div>
+          </div>
+          <div id="feature-fs" class="hidden good feature">
+            <div><img src='images/icons/ok.png'/>Fullscreen API: available</div>
+          </div>
+          <div id="feature-no-fs" class="hidden bad feature">
+            <div><img src='images/icons/error.png'/>Fullscreen API: not supported</div>
+            <div class="explanation">
+              Your browser does not support the <a href="https://wiki.mozilla.org/Gecko:FullScreenAPI" target="_blank">Fullscreen API</a>.
+              If you're using Chrome, you need Chrome 16+ ( currently Canary ), or try the
+              <code>--enable-fullscreen</code> flag for 15.
+            </div>
+          </div>
+          <div id="feature-webrtc" class="hidden good feature">
+            <div><img src='images/icons/ok.png'/>WebRTC: available</div>
+          </div>
+          <div id="feature-no-webrtc" class="hidden bad feature">
+            <div><img src='images/icons/error.png'/>WebRTC: not supported</div>
+            <div class="explanation">
+              Your browser does not support one or more of the APIs needed for
+              <a href="http://www.whatwg.org/specs/web-apps/current-work/webrtc.html" target="_blank">WebRTC</a>.
+            </div>
+          </div>
+          <div id="feature-webintents" class="hidden good feature">
+            <div><img src='images/icons/ok.png'/>Web Intents: available</div>
+          </div>
+          <div id="feature-no-webintents" class="hidden bad feature">
+            <div><img src='images/icons/error.png'/>Web Intents: not supported</div>
+            <div class="explanation">
+              Your browser does not support the <a href="http://webintents.org" target="_blank">Web Intents</a>.
+            </div>
+          </div>
+          <div style="margin-top:2em;width:100%;" class="centered"><strong>If things look good, press <span class="key rounded">&rarr;</span> to move on.</strong></div>
+        </section>
+      </article>
+
+      <article id="title-slide">
+        <div>
+          <div data-config-logo></div>
+          <h1>Mobile Web App Stack</h1>
+          <p data-config-name></p>
+          <p class="info">
+            <time datetime="YYYY-MM-DD" data-config-date>MM DD, 2011</time> &nbsp; - &nbsp; <span data-config-location></span>
+          </p>
+          <img data-config-map class="rounded" title="Of course we're using Geolocation!" alt="Of course we're using Geolocation!">
+        </div>
+      </article>
+
+      <article id="who">
+        <h3>Who?</h3>
+        <p>
+          <img class="avatar rounded" data-config-pic>
+        </p>
+        <p>
+          <a rel="author" data-config-gplus target="_blank">
+            <img src="http://www.google.com/images/icons/ui/gprofile_button-44.png" width="44" height="44">
+          </a> +<a rel="author" data-config-gplus target="_blank"><span data-config-name></span></a>
+        </p>
+        <br>
+        <p>
+          <a rel="author" data-config-twitter target="_blank" style="margin-left:-8px;">
+            <img src="images/twitter_newbird_blue.png" width="58" height="58">
+          </a> @ <a rel="author" data-config-twitter target="_blank" style="margin-left:-8px;"><span data-config-twitter></span></a>
+        </p>
+        <br>
+        <p>
+          Blog: <a data-config-blog target="_blank"><span data-config-blog></span></a>
+        </p>
+        <p>
+          Slides: <a href="http://ido-green.appspot.com/" target="_blank">ido-green.appspot.com</a>
+        </p>
+      </article>
+
+      <article>
+        <h3>Agenda</h3>
+        <ul class="build fade">
+          <li>The State of the mobile web
+          </li>
+          <li><label class="underline">Design</label> philosophy          
+          <li>How to build mobile web app</li>
+          <li>Demos</li>
+        </ul>
+      </article>
+
+      <article class="fill">
+        <section class="flexcenter" style="height:100%;">
+          <h1 class="red centered"><strong data-blowup>WARNING!</strong></h1>
+        </section>
+      </article>
+      <script>
+        (function() {
+          var el = document.querySelector('[data-blowup]');
+          el.addEventListener('click', function(e) {
+            this.classList.toggle('blowup');
+            this.parentNode.parentNode.parentNode.classList.toggle('blowup-shadow');
+          }, false);
+        })();
+      </script>
+
+      <article id="slide-pagevisibility">
+        <h3>Mobile trends</h3>
+        <aside class="note">
+          <section>
+            <ul>
+              <li>TODO - some more cases/charts</li>
+              
+            </ul>
+          </section>
+        </aside>
+        <p>Mobile internet usage to overtake desktop by 2014</p>
+        
+      </article>
+      
+      <article>
+        <h3>Mobile Browsers</h3>
+        <p>Mobile is 95% WebKit</p>
+        Main missing feeatures:
+        <ul>
+          <li>WebGL</li>
+          <li>Camera API</li>
+          <li>IndexedDB</li>
+          <li>Web Audio</li>
+        </ul>
+      </article>
+
+  
+      <article>
+        <h1>Web vs Native</h1>
+        <ul class="build fade">
+          <li>Web as a unified platform</li>
+          <ul>
+          <li>Chrome as a platform</li>
+          <li>Native is a <b>moving</b> target: iOS, Android, WP7, etc</li>
+           </ul>
+           <li>Native pushes the boundary - APIs that are closer to the metal</li>
+           <li>Standardized web moves more slowly, but catching up!</li>
+        </ul>
+        
+      </article>
+
+      
+      <!--
+
+      <article class="fill" style="background-image: url(images/frustrateduser.jpg)">
+      </article>
+
+      <article>
+        <q>Web Intents is a framework for client-side service discovery and inter-application communication</q>
+      </article>
+      -->
+      <article>
+        <h3>The case for enterprise</h3>
+        <ol class="build fade">
+          <li>Service registers its intention to handle an action for the user</li>
+          <li>App requests to start an action (share, edit, pick, view, ...)</li>
+          <li>User selects which service to handle the action.</li>
+        </ol>
+      </article>
+
+      <article id="android-intents-slide">
+        <h3>Sound familiar?</h3>
+        <style>
+          #android-intents-slide img {
+            height: 75%;
+            border: 1px solid black;
+          }
+        </style>
+        <p class="centered">
+          <img src="images/android_intents.jpg" class="reflect">
+        </p>
+      </article>
+
+      <article>
+        <h3>1. Service provider's application registers itself</h3>
+        <p>Declare intention to handle image sharing:</p>
+        <pre class="centered">
+&lt;intent action="<b>http://webintents.org/share</b>" <b>type="image/*"</b> /&gt;
+        </pre>
+        <dl>
+          <dt>action</dt>
+          <dd>Required. A verb describing the action to be performed</dd> 
+          <dt>type</dt>
+          <dd><em>Optional</em>. Mimetype filters</dd>
+          <dt>href</dt>
+          <dd><em>Optional</em>. If specified it will point to the action that is loaded 
+            when the user chooses the service.  If undefined, use the current page.</dd> 
+        </dl>
+      </article>
+
+      <article>
+        <h3>2. Client app starts an action</h3>
+        <p>App says it wants to use someone's sharing functionality:</p>
+        <pre>
+var intent = new Intent();
+intent.action = 'http://webintents.org/share';
+intent.type = 'image/*';
+intent.data = [imgData];
+
+<b>window.navigator.startActivity(intent);</b>
+        </pre>
+        <p>( 2b. user selects which awesome service to use )</p>
+      </article>
+
+      <article>
+        <h3>3. Provider handles the action</h3>
+        <p>Passed data ( optional ) is set on page load:</p>
+        <pre>
+window.intent.data
+        </pre>
+        <div class="build">
+          <p>Then what?</p>
+          <p><b>Nothing!</b> - you have just integrated your apps and services</p>
+          <p style="margin-top:2em;">...but there's more!</p>
+        </div>
+      </article>
+
+      <article>
+        <h3>Two-way communication</h3>
+        <p>Client:</p>
+        <pre>
+var intent = new Intent('http://webintents.org/pick', 'image/*');
+
+window.navigator.startActivity(intent, function(intentData) {
+  var img = document.querySelector('img');
+  img.src = intentData.data[0];
+});
+        </pre>
+        <p>Service: can post a callback message when it's done:</p>
+        <pre>
+window.intent.postResult([ ... some data ... ]);
+        </pre>
+      </article>
+
+      <article>
+        <h3>Demo - cloud picker</h3>
+        <p id="webintent-example">
+          <button id="pickImage">Pick an image</button> ( <a href="http://examples.webintents.org/intents/pick/index.html" target="_blank">register a picker</a> )<br>
+        </p>
+        <p class="build" style="margin-top:1em;">
+          <img src="images/docs_picker.png" class="centered reflect" style="width:75%;" title="Google Docs Picker API" alt="Google Docs Picker API">
+        </p>
+      </article>
+      <script>
+        (function() {
+          var button = document.getElementById('pickImage');
+          button.addEventListener('click', function() {
+            var intent = new Intent('http://webintents.org/pick', 'image/*');
+            window.navigator.startActivity(intent, function(resp) {
+              var example = document.getElementById('webintent-example');
+              var img = document.createElement('img');
+              img.src = resp.data[0];
+              img.classList.add('rounded');
+              example.appendChild(img);
+            });
+          });
+        })();
+      </script>
+
+      <article class="fill">
+        <section class="flexcenter" style="height:100%;">
+          <h1 class="white centered"><label class="underline">Rich</label> Multimedia</h1>
+        </section>
+        <img src="images/capabilities.jpg" style="opacity:0.90">
+        <div class="source">
+          <a href="http://www.flickr.com/photos/aaronpk/5060305871/">http://www.flickr.com/photos/aaronpk/5060305871/</a>
+        </div>
+      </article>
+
+      <!--
+         <article>
+            <h3>Pasting files</h3>
+            <pre>
+      document.body.onpaste = function(e) {
+        var items = e.clipboardData.items;
+        for (var i = 0; i &lt; items.length; ++i) {
+          if (items[i].kind == 'file' && items[i].type == 'image/png') {
+            var blob = items[i].getAsFile();
+      
+            var img = document.createElement('img');
+            img.src = window.URL.createObjectURL(blob);
+      
+            document.body.appendChild(img);
+          }
+        }
+      };
+      </pre>
+            <p>Click in this window and paste and image ( Copy image from a right-click )</p>
+            <img id="paste-img">
+        </article>
+        <script>
+        document.body.onpaste = function(e) {
+          var items = e.clipboardData.items;
+          for (var i = 0; i < items.length; ++i) {
+            if (items[i].kind == 'file' && items[i].type == 'image/png') {
+              var blob = items[i].getAsFile();
+              var url = window.URL.createObjectURL(blob);
+              document.getElementById('paste-img').src = url;
+            }
+          }
+        };
+        </script>
+      -->
+
+      <article class="smaller">
+        <h3>Camera &amp; microphone access</h3>
+        <aside class="note">
+          <section>
+            <ul>
+              <li>Prefixed as <code>navigator.webkitGetUserMedia()</code> in WebKit</li>
+              <li><code>window.URL.createObjectURL()</code> is prefixed as <code>window.webkitURL.createObjectURL()</code> in WebKit</li>
+              <li>Needs <code>--enable-media-stream</code> flag in Chrome.</li>
+              <li><a href="http://developers.whatwg.org/dnd.html#video-conferencing-and-peer-to-peer-communication" target="_blank">Video conferencing and peer-to-peer spec</a></li>
+            </ul>
+          </section>
+        </aside>
+        <p>Plugin-free camera, microphone, device access.</p>
+        <pre>
+&lt;video autoplay controls&gt;&lt;/video&gt;
+&lt;input type="button" value="⚫" onclick="record(this)" id="start">
+&lt;input type="button" value="◼" onclick="stop(this)" id="stop" disabled>
+        </pre>
+        <pre>
+var localMediaStream, recorder;
+
+var record = function(button) {
+  recorder = mediaStream.recorder();
+};
+
+var stop = function(button) {
+  mediaStream.stop();
+  recorder.getRecordedData(function(blob) {
+    // Upload blob using XHR2.
+  });
+};
+
+<b>window.navigator.getUserMedia</b>('video', function(stream) {
+  document.querySelector('video').src = <b>window.URL.createObjectURL(stream)</b>;
+  localMediaStream = stream;
+}, function(e) {
+  console.log(e);
+});
+        </pre>
+      </article>
+
+      <article id="fullscreen-slide">
+        <h3>Fullscreen content</h3>
+        <pre class="centered">
+&lt;video width="300" src="movie.webm" controls&gt;&lt;/video&gt;
+&lt;button onclick="enterFullscreen()">Get Huge!&lt;/button&gt;
+        </pre>
+        <pre>
+function enterFullscreen() {
+  var elem = document.querySelector('body');
+  elem.onwebkitfullscreenchange = function(e) {
+    console.log("Entered fullscreen!");
+    elem.onwebkitfullscreenchange = onFullscreenExit;
+  };
+  elem.<b>webkitRequestFullScreen</b>();
+}
+        </pre>
+        <p class="centered" style="margin-top:2em;"><a href="/demos/fullscreen.html" class="demo" target="_blank">Demo</a></p>
+      </article>
+
+      <article class="smaller">
+        <h3>Fullscreen API</h3>
+        <aside class="note">
+          <section>
+            <ul>
+              <li>Chrome 16 ( currently Canary ) does not need a flag. Older version can
+                try the <code>--enable-fullscreen</code> flag.</li>
+              <li>Spec: <a href="https://wiki.mozilla.org/Gecko:FullScreenAPI" target="_blank">https://wiki.mozilla.org/Gecko:FullScreenAPI</a></li>
+            </ul>
+            <p>New pseudo-classes, an attributes:</p>
+            <ul style="margin-top: 0">
+              <li><code>:-webkit-full-screen</code></li>
+              <li><code>:-webkit-full-screen-document</code></li>
+              <li><code>:-webkit-full-screen-root-with-target</code></li>
+              <li><code>allowFullScreen</code> attribute added for &lt;iframe&gt;</li>
+            </ul>
+          </section>
+        </aside>
+        <p>Control of the entire document and elements:</p>
+        <pre>
+document.webkitIsFullScreen ( bool )
+document.webkitCurrentFullScreenElement ( DOMElement )
+document.webkitFullScreenKeyboardInputAllowed ( bool )
+document.webkitCancelFullScreen();
+        </pre>
+        <pre>
+Element.webkitRequestFullScreen();
+//Element.webkitRequestFullScreenWithKeys();
+        </pre>
+        <p>Control of media elements:</p>
+        <pre>
+MediaElement.webkitSupportsFullscreen ( bool )
+MediaElement.webkitDisplayingFullscreen ( bool )
+MediaElement.webkitEnterFullScreen()
+MediaElement.webkitExitFullScreen()
+        </pre>
+
+      </article>
+
+      <article class="fill webrtc-slide" style="background-image: url(images/phone.png)">
+        <h2 class="white megabottom shadow">Web RTC</h2>
+        <div class="source">
+          <a href="http://www.flickr.com/photos/aareps/6005165581/">http://www.flickr.com/photos/aareps/6005165581/</a>
+        </div>
+      </article>
+
+      <article id="webrtc-images" class="webrtc-slide">
+        <h3>What's the problem?</h3>
+        <style>
+          /*#webrtc-images > section > div {
+            -webkit-perspective: 1000;
+          }*/
+          #webrtc-images > section {
+            -webkit-perspective: 1000;
+            height: 70%;
+            cursor: pointer;
+          }
+          #webrtc-images > section > div {
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform: translateX(125px) translateY(15px) rotateY(30deg);
+            height: 90%;
+          }
+          #webrtc-images > section > div figure {
+            position: absolute;
+            -webkit-user-select: none;
+            -webkit-transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+            -webkit-transition: -webkit-transform 0.35s ease-in, opacity 0.25s ease-out;
+            -webkit-transform: rotateX(-91deg);
+            -webkit-transform-origin: 50% 0;
+            visibility: hidden;
+            bottom: 0;
+            margin: 0;
+          }
+          #webrtc-images figure figcaption {
+            text-align: center;
+            font-size: 60%;
+          }
+          #webrtc-images figure img {
+            width: 500px;
+            height: 300px;
+            box-shadow: 0 0 15px #ccc;
+          }
+        </style>
+        <p>The demand for RTC is real!</p>
+        <section>
+          <div>
+            <figure><img src="images/gmailchat.png"><figcaption>GMail Video Chat</figcaption></figure>
+            <figure><img src="images/hangout.png"><figcaption>Google Plus Hangout</figcaption></figure>
+            <figure><img src="images/facebook-skype.png"><figcaption>Facebook Video Chat</figcaption></figure>
+            <figure><img src="images/tokbox.png"><figcaption>Tokbox</figcaption></figure>
+          </div>
+        </section>
+        <div class="build"><p>...all browser based. All requiring a special download or Flash</p></div>
+      </article>
+      <script>
+        var container = document.querySelector('#webrtc-images > section > div');
+        var imgs = container.children;
+        var index = 0;
+        container.addEventListener('click', function(e) {
+          if (index == imgs.length) {
+            return;
+          }
+
+          imgs[index].style.visibility = 'visible';
+          imgs[index].style.webkitTransform = 'rotateX(0deg)';
+
+          if (index > 0) {
+            imgs[index - 1].style.webkitTransform = 'rotateX(125deg)';
+            imgs[index - 1].style.opacity = '0';
+          }
+
+          //index = (index + 1) % imgs.length;
+          index++;
+
+          /*imgs[index].addEventListener('webkitTransitionEnd', function(e) {
+          //console.log(e, this.style.webkitTransform);
+          for (var i = 0; i < index; ++i) {
+            imgs[i].style.visibility = 'hidden';
+          }
+        }, false);*/
+        }, false);
+      </script>
+
+      <article class="webrtc-slide">
+        <h3>What is WebRTC?</h3>
+        <p class="centered"><em><label class="underline">Plugin-free</label> high quality real-time voice/video communication in the browser</em></p>
+        <br>
+        <ul class="build fade">
+          <li>Browser engine:
+            <ul>
+              <li>Echo cancellation, noise reduction, automatic gain control</li>
+              <li>Network jitter management</li>
+            </ul>
+          </li>
+          <li>Web APIs:
+            <ul>
+              <li>Audio/video capture and playback</li>
+              <li>Device management</li>
+              <li>Builds on the <a href="http://www.whatwg.org/specs/web-apps/current-work/webrtc.html#interface-definitions" target="_blank">PeerConnection API</a></li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+
+      <article class="webrtc-slide">
+        <h3>Architecture</h3>
+        <img src="images/webrtc-arch.jpg" class="centered rounded reflect">
+      </article>
+
+      <!--
+        <article class="smaller" class="webrtc-slide">
+          <h3><code>Example</code></h3>
+            <pre>
+      var pc = new <b>PeerConnection</b>('STUN example.com:8000', onSignalingMessage);
+      
+      function onSignalingMessage(msg, source) {
+        // send message to the other side via the signaling channel.
+        pc.processSignalingMessage(msg);
+      }
+      
+      pc.onaddstream = function(e) {
+        remoteVideo.src = window.webkitURL.createObjectURL(e.stream);
+      };
+      
+      pc.onremovestream = function(e) {
+        video.src = '';
+      };
+      
+      window.navigator.webkitGetUserMedia('video,audio', function(localStream) {
+        localVideo.src = window.webkitURL.createObjectURL(localStream);
+        pc.addStream(localStream); // Start sending video
+      }, function(e) { ... });
+      </pre>
+        </article>
+      -->
+
+      <article class="webrtc-slide">
+        <h3>Build the future...</h3>
+        <style>
+          #robot-img {
+            float: right;
+            height: 80%;
+            opacity: 0;
+            -webkit-transition: all 0.6s ease-in-out;
+          }
+          #robot-img.on {
+            opacity: 1;
+          }
+        </style>
+        <img src="images/robot.png" id="robot-img" alt="Robot" title="Robot">
+        <ul class="build fade">
+          <li>Break the "dial" paradigm</li>
+          <li>Build really social networks</li>
+          <li>Build interactive commerce</li>
+          <li>Build amazing online learning experiences</li>
+          <li>Online gaming</li>
+          <li>Build cool baby monitors</li>
+          <li><a href="javascript:document.querySelector('#robot-img').classList.toggle('on');">Robots!!</a></li>
+        </ul>
+      </article>
+
+      <article class="webrtc-slide">
+        <h3>Community effort</h3>
+        <ul>
+          <li><a href="http://www.webrtc.org/" target="_blank">webrtc.org</a></li>
+          <li><a href="http://code.webrtc.org/" target="_blank">code.webrtc.org</a> - open-source, royalty free BSD license</li>
+          <li>Mozilla and Opera supportive</li>
+        </ul>
+      </article>
+
+      <article class="fill" style="background-image: url(images/audio.jpg)">
+        <h2 class="white shadow">Web Audio API</h2>
+        <div class="source white">
+          <a href="http://www.flickr.com/photos/vancouverfilmschool/4286583454/">http://www.flickr.com/photos/vancouverfilmschool/4286583454/</a>
+        </div>
+      </article>
+
+      <article>
+        <h3>Don't we already have HTML5 &lt;audio&gt;?</h3>
+        <ul class="build fade">
+          <li>Yes :)...but &lt;audio&gt; can only take us so far</li>
+          <li>Simple low-latency, glitch-free, audio playback and scheduling</li>
+          <li>Real-time processing and analysis</li>
+          <li>Low-level audio manipulation</li>
+          <li>Effects: spatial panning, low/high pass filters, convolution, gain, ...</li>
+        </ul>
+      </article>
+
+      <article class="smaller">
+        <h3>Scheduled playback</h3>
+        <aside class="note">
+          <section class="centered">
+            <p>Prefixed in WebKit as <code>window.webkitAudioContext()</code></p>
+            <p><img src="images/audio-routing.png" style="height:200px"></p>
+          </section>
+        </aside>
+        <section>
+          <pre>
+var ctx = new window.<em>webkit</em><b>AudioContext</b>();
+
+function playSound(arrayBuffer) { // Obtain arrayBuffer from XHR2.
+  ctx.decodeAudioData(arrayBuffer, function(buffer) {
+    var src = ctx.createBufferSource();
+    src.buffer = buffer;
+    src.looping = false;
+    src.connect(ctx.destination);
+    src.noteOn(0); // Play immediately.
+  }, function(e) {
+    console.log(e);
+  });
+}
+          </pre>
+        </section>
+        <p>
+          Shoot: <button onclick="shootGun()">Now</button>
+          <button onclick="shootGun(2)">2s delay</button>
+          <button onclick="shootGun(-1)">Loopy</button>
+          <button onclick="stopGun()">Stop</button>
+          <input type="number" id="currentTime" readonly value="0" title="currentTime">
+        </p>
+      </article>
+      <script>
+        (function() {
+          var currentTime = document.getElementById('currentTime');
+
+          if (window.webkitAudioContext) {
+            var ctx = new webkitAudioContext();
+            var sample = null;
+            var src = null;
+            var reqAnimFrame = null;
+
+            window.shootGun = function(opt_delay) {
+              stopGun();
+
+              src = ctx.createBufferSource();
+              src.buffer = sample;
+              src.connect(ctx.destination);
+
+              (function callback(time) {
+                currentTime.value = ctx.currentTime;
+                reqAnimFrame = window.requestAnimationFrame(callback, src);
+              })();
+
+              if (opt_delay && opt_delay == -1) {
+                src.looping = true;
+                src.noteGrainOn(opt_delay, 0.1, 0.3);
+              } else if (opt_delay) {
+                src.noteOn(opt_delay + ctx.currentTime);
+              } else {
+                src.noteOn(0); // play immediately.
+              }
+            };
+
+            window.stopGun = function() {
+              if (src) {
+                src.noteOff(0);
+                window.cancelRequestAnimationFrame(reqAnimFrame);
+              }
+            };
+
+            var request = new XMLHttpRequest();
+            request.open('GET', 'sounds/boing.ogg', true);
+            request.responseType = 'arraybuffer';
+            request.onload = function() {
+              ctx.decodeAudioData(request.response, function(buffer) {
+                sample = buffer;
+              }, function(e) {
+                console.log(e);
+              });
+            };
+            request.send();
+          }
+        })();
+      </script>
+
+      <!--
+        <article class="smaller">
+          <h3>Generating sound</h3>
+          <aside class="note">
+            <section class="centered">
+              <p><img src="images/audio-routing.png" style="height:200px"></p>
+            </section>
+          </aside>
+            <pre>
+      var sine = new Oscillator(DSP.SINE, 440, 1.0, 2048, 44100).generate(); // dsp.js
+      
+      var src = ctx.createBufferSource();
+      src.buffer = <b>ctx.createBuffer</b>(1 /*channels*/, 2048, 44100);
+      <b>src.buffer.getChannelData(0)</b>.set(sine);
+      <b>src.looping = true;</b>
+      
+      src.connect(ctx.destination);
+      src.noteOn(0);
+      </pre>
+          <iframe style="border:none;width:800px;height:250px;" src="http://www.htmlfivewow.com/demos/waveform-generator/index.html"></iframe>
+        </article>
+      -->
+
+      <article class="smaller">
+        <h3>Audio processing</h3>
+        <aside class="note">
+          <section class="centered">
+            <p><img src="images/audio-routing-analysis.png" style="width:530px"></p>
+          </section>
+        </aside>
+        <pre>
+var ctx = new <em>webkit</em><b>AudioContext</b>();
+var analyser = <b>ctx.createAnalyser</b>();
+
+function initAudio(arrayBuffer) {
+  ctx.decodeAudioData(arrayBuffer, function(buffer) {
+    var src = ctx.createBufferSource();
+    src.buffer = buffer;
+    <b>src.connect(analyser);</b> // src -> analyser -> destination
+    <b>analyser.connect(ctx.destination);</b>
+    render(src);
+  }, function(e) {
+    console.log('Error decoding audio file', e);
+  });
+}
+
+function render(src) {
+  (function callback(timeStamp) {
+    <b>var byteData = new Uint8Array(analyser.frequencyBinCount);</b>
+    <b>analyser.getByteFrequencyData(byteData);</b>
+
+    // draw byteData to &lt;canvas&gt; visualization...
+
+    window.requestAnimationFrame(callback, src);
+  })();
+}
+        </pre>
+      </article>
+
+      <article class="fill">
+        <iframe src="http://www.htmlfivewow.com/demos/hal/index.html"></iframe>
+      </article>
+
+
+      <article class="fill">
+        <h2 class="nobackground white megabottom shadow">That was a lot!</h2>
+        <img src="images/tired.jpg">
+      </article>
+
+      <article class="nobackground fill">
+        <h2 class="dark right shadow">chromestatus.com</h2>
+        <iframe src='http://chromestatus.com'></iframe>
+      </article>
+
+      <article class="nobackground fill">
+        <h2 class="dark right shadow">updates.html5rocks.com</h2>
+        <iframe src='http://updates.html5rocks.com'></iframe>
+      </article>
+
+      <article>
+        <h3>Chrome Frame</h3>
+        <img src="images/cf-logo.png" class="centered" style="height:300px">
+        <p>Meta tag: <pre>&lt;meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"&gt;</pre></p>
+        <p>Header: <pre>X-UA-Compatible: IE=Edge,chrome=1</pre></p>
+      </article>
+
+      <article class="smaller">
+        <h3>Resources</h3>
+        <ul>
+          <li>Slides: <a href="http://bleedinghtml5.appspot.com" target="_blank">bleedinghtml5.appspot.com</a></li>
+          <li>Code: <a href="http://code.google.com/p/bleedinghtml5/" target="_blank">bleedinghtml5.googlecode.com</a></li>
+        </ul>
+        <br>
+        <ul>
+          <li><a href="http://webrtc.org" target="_blank">webrtc.org</a></li>
+          <li><a href="http://webintents.org" target="_blank">webintents.org</a>, <a href="http://www.chromium.org/developers/design-documents/webintentsapi" target="_blank">chromium.org spec</a></li>
+          <li><a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html" target="_blank">Web Audio API</a> spec</li>
+          <li><a href="http://developers.whatwg.org/dnd.html#video-conferencing-and-peer-to-peer-communication" target="_blank">getUserMedia()</a> spec</li>
+        </ul>
+        <br>
+        <ul>
+          <li>Learn: <a href="http://www.html5rocks.com" target="_blank">html5rocks.com</a></li>
+          <li>Compatibility: <a href="http://chromestatus.com/">chromestatus.com</a>, <a href="http://caniuse.com/" target="_blank">caniuse.com</a></li>
+          <li><a href="http://code.google.com/chrome/chromeframe/" target="_blank">Google Chrome Frame</a></li>
+          <li>Twitter: <a href="http://twitter.com/chromiumdev" target="_blank">@ChromiumDev</a></li>
+          <li><a href="http://new.crbug.com" target="_blank">new.crbug.com</a></li>
+        </ul>
+      </article>
+
+      <article>
+        <section class="flexcenter" style="height:95%">
+          <div data-config-logo style="float:none;height:155px;"></div>
+          <h1 style="margin-bottom:0.5em;">Thanks! Questions?</h1>
+          <p>
+            @<a rel="author" data-config-twitter target="_blank"><span data-config-twitter></span></a>
+            &nbsp;
+            +<a rel="author" data-config-gplus target="_blank"><span data-config-name></span></a>
+          </p>
+        </section>
+      </article>
+
+      <article>
+        <section class="flexcenter">
+          <div id="chrome-logo">
+            <div id="colors">
+              <div id="white_shell">
+                <div id="green" class="leaf"></div>
+                <div id="yellow" class="leaf"></div>
+                <div id="yellow2" class="leaf"></div>
+                <div id="red" class="leaf"></div>
+                <div id="blue_core"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+
+    </section>
+
+    <script src="http://webintents.org/webintents.js" async></script>
+    <script src="js/config.js"></script>
+    <script src="js/hide-slides.js"></script>
+    <script src="js/slides.js"></script>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-26542979-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+    <!--[if IE]>
+    <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+    <![endif]-->
+
+  </body>
+</html>
