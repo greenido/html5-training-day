@@ -229,6 +229,17 @@ Date: 10/16/2011
       <article class="fill" style="background-image: url(images/frustrateduser.jpg)">
       </article>
 
+        <dl>
+          <dt>action</dt>
+          <dd>Required. A verb describing the action to be performed</dd> 
+          <dt>type</dt>
+          <dd><em>Optional</em>. Mimetype filters</dd>
+          <dt>href</dt>
+          <dd><em>Optional</em>. If specified it will point to the action that is loaded 
+            when the user chooses the service.  If undefined, use the current page.</dd> 
+        </dl>
+
+
       <article>
         <q>Web Intents is a framework for client-side service discovery and inter-application communication</q>
       </article>
@@ -250,7 +261,7 @@ Date: 10/16/2011
       </article>
 
       <article id="android-intents-slide">
-        <h3>Sound familiar?</h3>
+        <h3>Good Examples</h3>
         <style>
           #android-intents-slide img {
             height: 75%;
@@ -258,97 +269,60 @@ Date: 10/16/2011
           }
         </style>
         <p class="centered">
-          <img src="images/android_intents.jpg" class="reflect">
+          <img src="images/TODO-web app examples.png" class="reflect">
         </p>
       </article>
 
       <article>
-        <h3>1. Service provider's application registers itself</h3>
-        <p>Declare intention to handle image sharing:</p>
+        <h3>Design</h3>
+        <p>Plan / Think about it up-front! <br/>
+        Don't let "web" and "enterprise" be an excuse for poor UX
+        </p>
         <pre class="centered">
-&lt;intent action="<b>http://webintents.org/share</b>" <b>type="image/*"</b> /&gt;
+Be inspired by mobile patterns  - TODO
         </pre>
-        <dl>
-          <dt>action</dt>
-          <dd>Required. A verb describing the action to be performed</dd> 
-          <dt>type</dt>
-          <dd><em>Optional</em>. Mimetype filters</dd>
-          <dt>href</dt>
-          <dd><em>Optional</em>. If specified it will point to the action that is loaded 
-            when the user chooses the service.  If undefined, use the current page.</dd> 
-        </dl>
+        <h4>Don't reinvent the wheel</h4>
+        <ul>
+          <li>http://pttrns.com</li>
+          <li>http://mobile-patterns.com</li>
+        </ul>
       </article>
 
       <article>
-        <h3>2. Client app starts an action</h3>
-        <p>App says it wants to use someone's sharing functionality:</p>
-        <pre>
-var intent = new Intent();
-intent.action = 'http://webintents.org/share';
-intent.type = 'image/*';
-intent.data = [imgData];
-
-<b>window.navigator.startActivity(intent);</b>
-        </pre>
-        <p>( 2b. user selects which awesome service to use )</p>
+        <h3>Design - Low fidelity</h3>
+        <p>Start with the UX</p>
+       
+        <p>TODO - nice image or mockup</p>
       </article>
 
       <article>
-        <h3>3. Provider handles the action</h3>
-        <p>Passed data ( optional ) is set on page load:</p>
-        <pre>
-window.intent.data
-        </pre>
+        <h3>Design - Mid fidelity</h3>
+        <p>Tune the UX and put some nice graphics</p>
+       
         <div class="build">
           <p>Then what?</p>
-          <p><b>Nothing!</b> - you have just integrated your apps and services</p>
+          <p><b>Nothing!</b> - you have just did some good </p>
           <p style="margin-top:2em;">...but there's more!</p>
         </div>
       </article>
 
       <article>
-        <h3>Two-way communication</h3>
-        <p>Client:</p>
-        <pre>
-var intent = new Intent('http://webintents.org/pick', 'image/*');
-
-window.navigator.startActivity(intent, function(intentData) {
-  var img = document.querySelector('img');
-  img.src = intentData.data[0];
-});
-        </pre>
-        <p>Service: can post a callback message when it's done:</p>
-        <pre>
-window.intent.postResult([ ... some data ... ]);
-        </pre>
+        <h3>Design - Per Device</h3>
+        <p>Tablet != Phone != ...</p>
+        TODO
       </article>
 
       <article>
-        <h3>Demo - cloud picker</h3>
-        <p id="webintent-example">
-          <button id="pickImage">Pick an image</button> ( <a href="http://examples.webintents.org/intents/pick/index.html" target="_blank">register a picker</a> )<br>
-        </p>
-        <p class="build" style="margin-top:1em;">
-          <img src="images/docs_picker.png" class="centered reflect" style="width:75%;" title="Google Docs Picker API" alt="Google Docs Picker API">
-        </p>
+        <h3>Philosophy: Adaptive Apps</h3>
+        <div class="build">
+* Too hard to use one DOM tree for all form factors
+* Adaptive apps – Custom views and templates for each form factor, shared model
+* Use responsive design within the form factor (eg. same layout on iPad 4:3 and Galaxy Tablet 16:9)
+        </div>
       </article>
-      <script>
-        (function() {
-          var button = document.getElementById('pickImage');
-          button.addEventListener('click', function() {
-            var intent = new Intent('http://webintents.org/pick', 'image/*');
-            window.navigator.startActivity(intent, function(resp) {
-              var example = document.getElementById('webintent-example');
-              var img = document.createElement('img');
-              img.src = resp.data[0];
-              img.classList.add('rounded');
-              example.appendChild(img);
-            });
-          });
-        })();
-      </script>
-
+      
       <article class="fill">
+      TODO - Building
         <section class="flexcenter" style="height:100%;">
           <h1 class="white centered"><label class="underline">Rich</label> Multimedia</h1>
         </section>
@@ -358,137 +332,49 @@ window.intent.postResult([ ... some data ... ]);
         </div>
       </article>
 
-      <!--
-         <article>
-            <h3>Pasting files</h3>
-            <pre>
-      document.body.onpaste = function(e) {
-        var items = e.clipboardData.items;
-        for (var i = 0; i &lt; items.length; ++i) {
-          if (items[i].kind == 'file' && items[i].type == 'image/png') {
-            var blob = items[i].getAsFile();
       
-            var img = document.createElement('img');
-            img.src = window.URL.createObjectURL(blob);
-      
-            document.body.appendChild(img);
-          }
-        }
-      };
-      </pre>
-            <p>Click in this window and paste and image ( Copy image from a right-click )</p>
-            <img id="paste-img">
-        </article>
-        <script>
-        document.body.onpaste = function(e) {
-          var items = e.clipboardData.items;
-          for (var i = 0; i < items.length; ++i) {
-            if (items[i].kind == 'file' && items[i].type == 'image/png') {
-              var blob = items[i].getAsFile();
-              var url = window.URL.createObjectURL(blob);
-              document.getElementById('paste-img').src = url;
-            }
-          }
-        };
-        </script>
-      -->
-
       <article class="smaller">
-        <h3>Camera &amp; microphone access</h3>
+        <h3>Model view controller</h3>
         <aside class="note">
           <section>
             <ul>
-              <li>Prefixed as <code>navigator.webkitGetUserMedia()</code> in WebKit</li>
-              <li><code>window.URL.createObjectURL()</code> is prefixed as <code>window.webkitURL.createObjectURL()</code> in WebKit</li>
-              <li>Needs <code>--enable-media-stream</code> flag in Chrome.</li>
-              <li><a href="http://developers.whatwg.org/dnd.html#video-conferencing-and-peer-to-peer-communication" target="_blank">Video conferencing and peer-to-peer spec</a></li>
+              <li>TODO</li>
+            
             </ul>
           </section>
         </aside>
-        <p>Plugin-free camera, microphone, device access.</p>
-        <pre>
-&lt;video autoplay controls&gt;&lt;/video&gt;
-&lt;input type="button" value="⚫" onclick="record(this)" id="start">
-&lt;input type="button" value="◼" onclick="stop(this)" id="stop" disabled>
-        </pre>
-        <pre>
-var localMediaStream, recorder;
-
-var record = function(button) {
-  recorder = mediaStream.recorder();
-};
-
-var stop = function(button) {
-  mediaStream.stop();
-  recorder.getRecordedData(function(blob) {
-    // Upload blob using XHR2.
-  });
-};
-
-<b>window.navigator.getUserMedia</b>('video', function(stream) {
-  document.querySelector('video').src = <b>window.URL.createObjectURL(stream)</b>;
-  localMediaStream = stream;
-}, function(e) {
-  console.log(e);
-});
-        </pre>
+        <p>Fundamental pattern for separating concerns
+Model handles data and server persistence layer View handles user input and rendering
+Used to be on the server. Now moving to the thicker client.
+</p>
+        
       </article>
 
       <article id="fullscreen-slide">
-        <h3>Fullscreen content</h3>
-        <pre class="centered">
-&lt;video width="300" src="movie.webm" controls&gt;&lt;/video&gt;
-&lt;button onclick="enterFullscreen()">Get Huge!&lt;/button&gt;
-        </pre>
-        <pre>
-function enterFullscreen() {
-  var elem = document.querySelector('body');
-  elem.onwebkitfullscreenchange = function(e) {
-    console.log("Entered fullscreen!");
-    elem.onwebkitfullscreenchange = onFullscreenExit;
-  };
-  elem.<b>webkitRequestFullScreen</b>();
-}
-        </pre>
-        <p class="centered" style="margin-top:2em;"><a href="/demos/fullscreen.html" class="demo" target="_blank">Demo</a></p>
+        <h3>Paradox of choice</h3>
+        
+        <p class="centered" style="margin-top:2em;">
+There are many MVC frameworks
+TodoMVC - one app written in all of them Comparison blog post - a high level comparison
+I use Backbone.js for relatively simple apps
+        </p>
       </article>
 
       <article class="smaller">
-        <h3>Fullscreen API</h3>
+        <h3>Templating engines</h3>
         <aside class="note">
           <section>
             <ul>
-              <li>Chrome 16 ( currently Canary ) does not need a flag. Older version can
-                try the <code>--enable-fullscreen</code> flag.</li>
-              <li>Spec: <a href="https://wiki.mozilla.org/Gecko:FullScreenAPI" target="_blank">https://wiki.mozilla.org/Gecko:FullScreenAPI</a></li>
-            </ul>
-            <p>New pseudo-classes, an attributes:</p>
-            <ul style="margin-top: 0">
-              <li><code>:-webkit-full-screen</code></li>
-              <li><code>:-webkit-full-screen-document</code></li>
-              <li><code>:-webkit-full-screen-root-with-target</code></li>
-              <li><code>allowFullScreen</code> attribute added for &lt;iframe&gt;</li>
+              <li>TODO</li>
             </ul>
           </section>
         </aside>
-        <p>Control of the entire document and elements:</p>
-        <pre>
-document.webkitIsFullScreen ( bool )
-document.webkitCurrentFullScreenElement ( DOMElement )
-document.webkitFullScreenKeyboardInputAllowed ( bool )
-document.webkitCancelFullScreen();
-        </pre>
-        <pre>
-Element.webkitRequestFullScreen();
-//Element.webkitRequestFullScreenWithKeys();
-        </pre>
-        <p>Control of media elements:</p>
-        <pre>
-MediaElement.webkitSupportsFullscreen ( bool )
-MediaElement.webkitDisplayingFullscreen ( bool )
-MediaElement.webkitEnterFullScreen()
-MediaElement.webkitExitFullScreen()
-        </pre>
+        <p>Complex apps require complex DOM DOM manipulation is relatively slow
+Answer: JS templating
+1. Embed <script id="my-template" type=" text/my-template-language"> into HTML, with text contents of the template.
+2. Use template library to populate template with data.
+</p>
+        TODO
 
       </article>
 
