@@ -362,7 +362,18 @@ to {
   width:100%;
   display:block;
 }
-
+.wait-list {
+  font-size: 60%;
+  position: relative;
+  text-align: justify;
+  width: 200px;
+  background: lightSalmon;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-transform: rotate(17deg);
+  bottom: 70px;
+  left: 680px;
+}
 .notes {
   float:left;
   text-align: left;
@@ -371,7 +382,7 @@ to {
   background-color: lightsalmon;
   border-radius: 40px;
   border: 1px solid silver;
-  box-shadow: 0 0 10px orange;
+  box-shadow: 3px 3px 2px black;
   position: relative;
   left: 355px;
   top:120px;
@@ -865,4 +876,10 @@ button {
 }
 button:hover {
   background-color: lightblue;
+}
+
+.wait-list-img {
+  position: relative;
+  bottom: 565px;
+  left: 340px;
 }
