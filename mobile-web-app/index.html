@@ -33,92 +33,7 @@ Date: 10/16/2011
 
       <!--<article class='biglogo'></article>-->
 
-      <article id="slide-preflight">
-        <section class="flexcenter" style="height:98%;-webkit-box-align:start;">
-          <h1>Preflight</h1>
-          <p class="checking-compat">Checking compatibility...</p>
-          <!--<div id="feature-page-vis" class="hidden good feature">
-            <div><img src='images/icons/ok.png'/>Page Visibility API: available</div>
-          </div>
-          <div id="feature-no-page-vis" class="hidden bad feature">
-            <div><img src='images/icons/error.png'/>Page Visibility API: not supported</div>
-            <div class="explanation">
-              Your browser does not support the <a href="http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/PageVisibility/Overview.html" target="_blank">Page Visibility API</a>.
-            </div>
-          </div>
-          <div id="feature-rph" class="hidden good feature">
-            <div><img src='images/icons/ok.png'/>Custom Protocol Handlers: available</div>
-          </div>
-          <div id="feature-no-rph" class="hidden bad feature">
-            <div><img src='images/icons/error.png'/>Custom Protocol Handlers: not supported</div>
-            <div class="explanation">
-              Your browser does not support the <a href="http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/PageVisibility/Overview.html" target="_blank">Page Visibility API</a>.
-            </div>
-          </div>
-          <div id="feature-raf" class="hidden good feature">
-            <div><img src='images/icons/ok.png'/><code>requestAnimationFrame()</code>: available</div>
-          </div>
-          <div id="feature-no-raf" class="hidden bad feature">
-            <div><img src='images/icons/error.png'/><code>requestAnimationFrame()</code>: not supported</div>
-            <div class="explanation">
-              Your browser does not support <code>window.requestAnimationFrame()</code>.
-            </div>
-          </div>-->
-          <div id="feature-intelligence-apis" class="hidden good feature">
-            <div><img src='images/icons/ok.png'/>Intelligence APIs: available</div>
-          </div>
-          <div id="feature-no-intelligence-apis" class="hidden bad feature">
-            <div><img src='images/icons/error.png'/>Intelligence APIs: not supported</div>
-            <div class="explanation">
-              Your browser does not support one or more of the following APIs:
-              <code>navigator.registerProtocolHandler()</code>, <code>window.requestAnimationFrame()</code>,
-              <a href="http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/PageVisibility/Overview.html" target="_blank">Page Visibility API</a>.
-            </div>
-          </div>
-          <div id="feature-web-audio" class="hidden good feature">
-            <div><img src='images/icons/ok.png'/>Web Audio API: available</div>
-          </div>
-          <div id="feature-no-web-audio" class="hidden bad feature">
-            <div><img src='images/icons/error.png'/>Web Audio API: not supported</div>
-            <div class="explanation">
-              Your browser does not support the <a href="http://chromium.googlecode.com/svn/trunk/samples/audio/specification/specification.html" target="_blank">Web Audio API</a>.
-              You need Chrome 14+.
-            </div>
-          </div>
-          <div id="feature-fs" class="hidden good feature">
-            <div><img src='images/icons/ok.png'/>Fullscreen API: available</div>
-          </div>
-          <div id="feature-no-fs" class="hidden bad feature">
-            <div><img src='images/icons/error.png'/>Fullscreen API: not supported</div>
-            <div class="explanation">
-              Your browser does not support the <a href="https://wiki.mozilla.org/Gecko:FullScreenAPI" target="_blank">Fullscreen API</a>.
-              If you're using Chrome, you need Chrome 16+ ( currently Canary ), or try the
-              <code>--enable-fullscreen</code> flag for 15.
-            </div>
-          </div>
-          <div id="feature-webrtc" class="hidden good feature">
-            <div><img src='images/icons/ok.png'/>WebRTC: available</div>
-          </div>
-          <div id="feature-no-webrtc" class="hidden bad feature">
-            <div><img src='images/icons/error.png'/>WebRTC: not supported</div>
-            <div class="explanation">
-              Your browser does not support one or more of the APIs needed for
-              <a href="http://www.whatwg.org/specs/web-apps/current-work/webrtc.html" target="_blank">WebRTC</a>.
-            </div>
-          </div>
-          <div id="feature-webintents" class="hidden good feature">
-            <div><img src='images/icons/ok.png'/>Web Intents: available</div>
-          </div>
-          <div id="feature-no-webintents" class="hidden bad feature">
-            <div><img src='images/icons/error.png'/>Web Intents: not supported</div>
-            <div class="explanation">
-              Your browser does not support the <a href="http://webintents.org" target="_blank">Web Intents</a>.
-            </div>
-          </div>
-          <div style="margin-top:2em;width:100%;" class="centered"><strong>If things look good, press <span class="key rounded">&rarr;</span> to move on.</strong></div>
-        </section>
-      </article>
-
+      
       <article id="title-slide">
         <div>
           <div data-config-logo></div>
@@ -163,7 +78,7 @@ Date: 10/16/2011
           </li>
           <li><label class="underline">Design</label> philosophy          
           <li>How to build mobile web app</li>
-          <li>Demos</li>
+          <li>Tips</li>
         </ul>
       </article>
 
@@ -199,6 +114,7 @@ Date: 10/16/2011
       <article>
         <h3>Mobile Browsers</h3>
         <p>Mobile is 95% WebKit</p>
+        <br/>
         Main missing feeatures:
         <ul>
           <li>WebGL</li>
@@ -251,6 +167,7 @@ Date: 10/16/2011
           <ul>
             <li>Examples</li>
             <li><a href="app.ft.com">app.ft.com</a></li>
+            <li><a href="workflowy.com">workflowy.com</a></li>
             <li><a href="mobile.twitter.com">mobile.twitter.com</a></li>
           </ul>
           <li>The mobile web is <a href="http://www.emarketer.com/Article.aspx?R=1008010" target="_blank">ready for apps.</a></li>
@@ -283,8 +200,8 @@ Be inspired by mobile patterns  - TODO
         </pre>
         <h4>Don't reinvent the wheel</h4>
         <ul>
-          <li>http://pttrns.com</li>
-          <li>http://mobile-patterns.com</li>
+          <li><a href="http://pttrns.com">http://pttrns.com</a></li>
+          <li><a href="http://mobile-patterns.com">http://mobile-patterns.com</a></li>
         </ul>
       </article>
 
@@ -295,17 +212,7 @@ Be inspired by mobile patterns  - TODO
         <p>TODO - nice image or mockup</p>
       </article>
 
-      <article>
-        <h3>Design - Mid fidelity</h3>
-        <p>Tune the UX and put some nice graphics</p>
-       
-        <div class="build">
-          <p>Then what?</p>
-          <p><b>Nothing!</b> - you have just did some good </p>
-          <p style="margin-top:2em;">...but there's more!</p>
-        </div>
-      </article>
-
+      
       <article>
         <h3>Design - Per Device</h3>
         <p>Tablet != Phone != ...</p>
@@ -314,11 +221,13 @@ Be inspired by mobile patterns  - TODO
 
       <article>
         <h3>Philosophy: Adaptive Apps</h3>
-        <div class="build">
-* Too hard to use one DOM tree for all form factors
-* Adaptive apps – Custom views and templates for each form factor, shared model
-* Use responsive design within the form factor (eg. same layout on iPad 4:3 and Galaxy Tablet 16:9)
-        </div>
+ 
+        <ul class="build fade">
+          <li>Too hard to use one DOM tree for all form factors</li>
+          <li>Adaptive apps – Custom views and templates for each form factor, shared model</li>
+          <li>Use responsive design within the form factor (eg. same layout on iPad 4:3 and Galaxy Tablet 16:9)</li>
+        </ul>
+  
       </article>
       
       <article class="fill">
@@ -360,8 +269,8 @@ I use Backbone.js for relatively simple apps
         </p>
       </article>
 
-      <article class="smaller">
-        <h3>Templating engines</h3>
+      <article>
+        <h3>Templating engines - 1</h3>
         <aside class="note">
           <section>
             <ul>
@@ -371,124 +280,36 @@ I use Backbone.js for relatively simple apps
         </aside>
         <p>Complex apps require complex DOM DOM manipulation is relatively slow
 Answer: JS templating
-1. Embed <script id="my-template" type=" text/my-template-language"> into HTML, with text contents of the template.
+1. Embed &lt;script id="my-template" type=" text/my-template-language"&gt; into HTML, with text contents of the template.
 2. Use template library to populate template with data.
 </p>
         TODO
 
       </article>
 
-      <article class="fill webrtc-slide" style="background-image: url(images/phone.png)">
-        <h2 class="white megabottom shadow">Web RTC</h2>
-        <div class="source">
-          <a href="http://www.flickr.com/photos/aareps/6005165581/">http://www.flickr.com/photos/aareps/6005165581/</a>
-        </div>
-      </article>
 
-      <article id="webrtc-images" class="webrtc-slide">
-        <h3>What's the problem?</h3>
-        <style>
-          /*#webrtc-images > section > div {
-            -webkit-perspective: 1000;
-          }*/
-          #webrtc-images > section {
-            -webkit-perspective: 1000;
-            height: 70%;
-            cursor: pointer;
-          }
-          #webrtc-images > section > div {
-            -webkit-transform-style: preserve-3d;
-            -webkit-transform: translateX(125px) translateY(15px) rotateY(30deg);
-            height: 90%;
-          }
-          #webrtc-images > section > div figure {
-            position: absolute;
-            -webkit-user-select: none;
-            -webkit-transform-style: preserve-3d;
-            -webkit-backface-visibility: hidden;
-            -webkit-transition: -webkit-transform 0.35s ease-in, opacity 0.25s ease-out;
-            -webkit-transform: rotateX(-91deg);
-            -webkit-transform-origin: 50% 0;
-            visibility: hidden;
-            bottom: 0;
-            margin: 0;
-          }
-          #webrtc-images figure figcaption {
-            text-align: center;
-            font-size: 60%;
-          }
-          #webrtc-images figure img {
-            width: 500px;
-            height: 300px;
-            box-shadow: 0 0 15px #ccc;
-          }
-        </style>
-        <p>The demand for RTC is real!</p>
-        <section>
-          <div>
-            <figure><img src="images/gmailchat.png"><figcaption>GMail Video Chat</figcaption></figure>
-            <figure><img src="images/hangout.png"><figcaption>Google Plus Hangout</figcaption></figure>
-            <figure><img src="images/facebook-skype.png"><figcaption>Facebook Video Chat</figcaption></figure>
-            <figure><img src="images/tokbox.png"><figcaption>Tokbox</figcaption></figure>
-          </div>
-        </section>
-        <div class="build"><p>...all browser based. All requiring a special download or Flash</p></div>
-      </article>
-      <script>
-        var container = document.querySelector('#webrtc-images > section > div');
-        var imgs = container.children;
-        var index = 0;
-        container.addEventListener('click', function(e) {
-          if (index == imgs.length) {
-            return;
-          }
-
-          imgs[index].style.visibility = 'visible';
-          imgs[index].style.webkitTransform = 'rotateX(0deg)';
-
-          if (index > 0) {
-            imgs[index - 1].style.webkitTransform = 'rotateX(125deg)';
-            imgs[index - 1].style.opacity = '0';
-          }
-
-          //index = (index + 1) % imgs.length;
-          index++;
-
-          /*imgs[index].addEventListener('webkitTransitionEnd', function(e) {
-          //console.log(e, this.style.webkitTransform);
-          for (var i = 0; i < index; ++i) {
-            imgs[i].style.visibility = 'hidden';
-          }
-        }, false);*/
-        }, false);
-      </script>
-
-      <article class="webrtc-slide">
-        <h3>What is WebRTC?</h3>
-        <p class="centered"><em><label class="underline">Plugin-free</label> high quality real-time voice/video communication in the browser</em></p>
+     
+      <article  class="smaller">
+        <h3>Templating engines - 2</h3>
+        <p class="centered"><em>
+          <label class="underline">Mustache.js</label> is a logic-less templating engine</em>
+        </p>
         <br>
-        <ul class="build fade">
-          <li>Browser engine:
-            <ul>
-              <li>Echo cancellation, noise reduction, automatic gain control</li>
-              <li>Network jitter management</li>
-            </ul>
-          </li>
-          <li>Web APIs:
-            <ul>
-              <li>Audio/video capture and playback</li>
-              <li>Device management</li>
-              <li>Builds on the <a href="http://www.whatwg.org/specs/web-apps/current-work/webrtc.html#interface-definitions" target="_blank">PeerConnection API</a></li>
-            </ul>
-          </li>
-        </ul>
+        <code>Example</code>
+        <pre>
+          {{#items}} 
+              {{#link}}&lt;li&gt;&lt;a href="{{url}}"&gt;{{name}}&lt;/a&gt;&lt;/li&gt;{{/link}}
+          {{/items}}
+            +
+            {"items": [{"name": "green", "link": true, "url": "#Green"},
+                       {"name": "blue", "link": true, "url": "#Blue"}], }
+            =
+           &lt;li&gt;&lt;a href="#Green"&gt;green&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="#Blue"&gt;blue&lt;/a&gt;&lt;/li&gt;
+        </pre>
       </article>
 
-      <article class="webrtc-slide">
-        <h3>Architecture</h3>
-        <img src="images/webrtc-arch.jpg" class="centered rounded reflect">
-      </article>
-
+      
       <!--
         <article class="smaller" class="webrtc-slide">
           <h3><code>Example</code></h3>
@@ -516,144 +337,93 @@ Answer: JS templating
         </article>
       -->
 
-      <article class="webrtc-slide">
-        <h3>Build the future...</h3>
-        <style>
-          #robot-img {
-            float: right;
-            height: 80%;
-            opacity: 0;
-            -webkit-transition: all 0.6s ease-in-out;
-          }
-          #robot-img.on {
-            opacity: 1;
-          }
-        </style>
-        <img src="images/robot.png" id="robot-img" alt="Robot" title="Robot">
+      <article>
+        <h3>CSS Frameworks</h3>
+        <p>Augmented CSS-style languages</p>
         <ul class="build fade">
-          <li>Break the "dial" paradigm</li>
-          <li>Build really social networks</li>
-          <li>Build interactive commerce</li>
-          <li>Build amazing online learning experiences</li>
-          <li>Online gaming</li>
-          <li>Build cool baby monitors</li>
-          <li><a href="javascript:document.querySelector('#robot-img').classList.toggle('on');">Robots!!</a></li>
+          <li>$variables: true</li>
+          <li>.nesting { .allowed { font-color: bold; }} </li>
+          <li>mixins/inheritance</li>
         </ul>
-      </article>
+        <p>Many variants of syntax, but basically the same. My preference: SCSS 
 
-      <article class="webrtc-slide">
-        <h3>Community effort</h3>
-        <ul>
-          <li><a href="http://www.webrtc.org/" target="_blank">webrtc.org</a></li>
-          <li><a href="http://code.webrtc.org/" target="_blank">code.webrtc.org</a> - open-source, royalty free BSD license</li>
-          <li>Mozilla and Opera supportive</li>
-        </ul>
-      </article>
-
-      <article class="fill" style="background-image: url(images/audio.jpg)">
-        <h2 class="white shadow">Web Audio API</h2>
-        <div class="source white">
-          <a href="http://www.flickr.com/photos/vancouverfilmschool/4286583454/">http://www.flickr.com/photos/vancouverfilmschool/4286583454/</a>
-        </div>
+          <b>/ TODO - LESS/SASS</b>
+        </p>
       </article>
 
       <article>
-        <h3>Don't we already have HTML5 &lt;audio&gt;?</h3>
+        <h3>Layout - 1</h3>
+        <p>
+        Best practice: avoid tables, relative positioning, absolute positioning, floats
+Use CSS flex-box!
+</p>
+<pre>
+#flexbox { display: box; box-orient: horizontal;
+} #flexbox > p:nth-child(2), #flexbox > p:nth-child(3) {
+box-flex: 1;
+}
+</pre>
+Caveat: new API just landed, but relatively few changes
+      </article>
+
+      
+      <article>
+        <h3>Layout - 2</h3>
         <ul class="build fade">
-          <li>Yes :)...but &lt;audio&gt; can only take us so far</li>
-          <li>Simple low-latency, glitch-free, audio playback and scheduling</li>
-          <li>Real-time processing and analysis</li>
-          <li>Low-level audio manipulation</li>
-          <li>Effects: spatial panning, low/high pass filters, convolution, gain, ...</li>
+          <li>What about headers/footers? Use position: fixed; </li>
+          <li>How to scroll inside elements? Use overflow: scroll;</li>
+          <li>Inertial scrolling? (Note: iOS 5 only)
+              -webkit-overflow-scrolling: touch;</li>
         </ul>
       </article>
 
       <article class="smaller">
-        <h3>Scheduled playback</h3>
-        <aside class="note">
-          <section class="centered">
-            <p>Prefixed in WebKit as <code>window.webkitAudioContext()</code></p>
-            <p><img src="images/audio-routing.png" style="height:200px"></p>
-          </section>
-        </aside>
-        <section>
-          <pre>
-var ctx = new window.<em>webkit</em><b>AudioContext</b>();
-
-function playSound(arrayBuffer) { // Obtain arrayBuffer from XHR2.
-  ctx.decodeAudioData(arrayBuffer, function(buffer) {
-    var src = ctx.createBufferSource();
-    src.buffer = buffer;
-    src.looping = false;
-    src.connect(ctx.destination);
-    src.noteOn(0); // Play immediately.
-  }, function(e) {
-    console.log(e);
-  });
-}
-          </pre>
-        </section>
+        <h3>Touch</h3>
         <p>
-          Shoot: <button onclick="shootGun()">Now</button>
-          <button onclick="shootGun(2)">2s delay</button>
-          <button onclick="shootGun(-1)">Loopy</button>
-          <button onclick="stopGun()">Stop</button>
-          <input type="number" id="currentTime" readonly value="0" title="currentTime">
+        Fingers != mouse. Design for multi-touch!
+        </p>
+        <ul class="build fade">
+          <li>touchstart</li>
+          <li>touchmove</li>
+          <li>touchend</li>
+        </ul>
+  
+        <p>
+          (!) Click delayed by 300ms on mobile. Use <a href="http://code.google.com/mobile/articles/fast_buttons.html" target="_blank">fast click.</a><br/>
+          More detail info:<a href="http://www.html5rocks.com/en/mobile/touch.html" target="_blank">Developing for Multi-Touch Web Browsers</a>
         </p>
       </article>
-      <script>
-        (function() {
-          var currentTime = document.getElementById('currentTime');
+      
+      <article>
+        <h3>Offline First</h3>
+        <ul>
+          <li>Storing assets: AppCache, Filesystem Storing data: localStorage, WebSQL, IndexedDB</li>
+          <li>Offline first – pretend that there's no internet connection, implement a sync layer that works only when online.</li>
+          <li><a href="https://developer.mozilla.org/en/Online_and_offline_events">Offline/online events:</a> 
+            <pre>navigator.onLine & window.(ononline|onoffline)</pre>
+          </li>
+        </ul>
+      </article>
 
-          if (window.webkitAudioContext) {
-            var ctx = new webkitAudioContext();
-            var sample = null;
-            var src = null;
-            var reqAnimFrame = null;
+      <article>
+        <h3>Testing</h3>
+        <ul>
+          <li>MVC provides separation of concerns</li>
+          <li>Qunit - test your models</li>
+          <li><a href="http://seleniumhq.org/" target="_blank">Selenium</a>
+          </li>
+        </ul>
+      </article>
 
-            window.shootGun = function(opt_delay) {
-              stopGun();
-
-              src = ctx.createBufferSource();
-              src.buffer = sample;
-              src.connect(ctx.destination);
-
-              (function callback(time) {
-                currentTime.value = ctx.currentTime;
-                reqAnimFrame = window.requestAnimationFrame(callback, src);
-              })();
-
-              if (opt_delay && opt_delay == -1) {
-                src.looping = true;
-                src.noteGrainOn(opt_delay, 0.1, 0.3);
-              } else if (opt_delay) {
-                src.noteOn(opt_delay + ctx.currentTime);
-              } else {
-                src.noteOn(0); // play immediately.
-              }
-            };
-
-            window.stopGun = function() {
-              if (src) {
-                src.noteOff(0);
-                window.cancelRequestAnimationFrame(reqAnimFrame);
-              }
-            };
-
-            var request = new XMLHttpRequest();
-            request.open('GET', 'sounds/boing.ogg', true);
-            request.responseType = 'arraybuffer';
-            request.onload = function() {
-              ctx.decodeAudioData(request.response, function(buffer) {
-                sample = buffer;
-              }, function(e) {
-                console.log(e);
-              });
-            };
-            request.send();
-          }
-        })();
-      </script>
+      <article>
+        <h3>Tips and tricks</h3>
+        <ul>
+          <li>Try tech stack like: <a href="http://walmartlabs.github.com/thorax/" target="_blank">thorax.js</a></li>
+          <li>Enable Safari console for logging on iOS (Settings -> Safari -> Developer)</li>
+          <li>Simulate touch events on desktop with <a href="http://smus.com/multi-touch-browser-patch" target="_blank">MagicTouch.js</a></li>
+          <li>Remote debugging hack with <a href="http://jsconsole.com/remote-debugging.html" target="_blank">jsconsole.com</a></li>
+        </ul>
+      </article>
 
       <!--
         <article class="smaller">
@@ -677,53 +447,7 @@ function playSound(arrayBuffer) { // Obtain arrayBuffer from XHR2.
           <iframe style="border:none;width:800px;height:250px;" src="http://www.htmlfivewow.com/demos/waveform-generator/index.html"></iframe>
         </article>
       -->
-
-      <article class="smaller">
-        <h3>Audio processing</h3>
-        <aside class="note">
-          <section class="centered">
-            <p><img src="images/audio-routing-analysis.png" style="width:530px"></p>
-          </section>
-        </aside>
-        <pre>
-var ctx = new <em>webkit</em><b>AudioContext</b>();
-var analyser = <b>ctx.createAnalyser</b>();
-
-function initAudio(arrayBuffer) {
-  ctx.decodeAudioData(arrayBuffer, function(buffer) {
-    var src = ctx.createBufferSource();
-    src.buffer = buffer;
-    <b>src.connect(analyser);</b> // src -> analyser -> destination
-    <b>analyser.connect(ctx.destination);</b>
-    render(src);
-  }, function(e) {
-    console.log('Error decoding audio file', e);
-  });
-}
-
-function render(src) {
-  (function callback(timeStamp) {
-    <b>var byteData = new Uint8Array(analyser.frequencyBinCount);</b>
-    <b>analyser.getByteFrequencyData(byteData);</b>
-
-    // draw byteData to &lt;canvas&gt; visualization...
-
-    window.requestAnimationFrame(callback, src);
-  })();
-}
-        </pre>
-      </article>
-
-      <article class="fill">
-        <iframe src="http://www.htmlfivewow.com/demos/hal/index.html"></iframe>
-      </article>
-
-
-      <article class="fill">
-        <h2 class="nobackground white megabottom shadow">That was a lot!</h2>
-        <img src="images/tired.jpg">
-      </article>
-
+    
       <article class="nobackground fill">
         <h2 class="dark right shadow">chromestatus.com</h2>
         <iframe src='http://chromestatus.com'></iframe>
@@ -734,39 +458,26 @@ function render(src) {
         <iframe src='http://updates.html5rocks.com'></iframe>
       </article>
 
-      <article>
-        <h3>Chrome Frame</h3>
-        <img src="images/cf-logo.png" class="centered" style="height:300px">
-        <p>Meta tag: <pre>&lt;meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"&gt;</pre></p>
-        <p>Header: <pre>X-UA-Compatible: IE=Edge,chrome=1</pre></p>
-      </article>
-
+      
       <article class="smaller">
         <h3>Resources</h3>
         <ul>
-          <li>Slides: <a href="http://bleedinghtml5.appspot.com" target="_blank">bleedinghtml5.appspot.com</a></li>
+          <li>Slides: <a href="http://ido-green.appspot.com" target="_blank">ido-green.appspot.com</a></li>
           <li>Code: <a href="http://code.google.com/p/bleedinghtml5/" target="_blank">bleedinghtml5.googlecode.com</a></li>
         </ul>
         <br>
-        <ul>
-          <li><a href="http://webrtc.org" target="_blank">webrtc.org</a></li>
-          <li><a href="http://webintents.org" target="_blank">webintents.org</a>, <a href="http://www.chromium.org/developers/design-documents/webintentsapi" target="_blank">chromium.org spec</a></li>
-          <li><a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html" target="_blank">Web Audio API</a> spec</li>
-          <li><a href="http://developers.whatwg.org/dnd.html#video-conferencing-and-peer-to-peer-communication" target="_blank">getUserMedia()</a> spec</li>
-        </ul>
+        TODO
         <br>
         <ul>
           <li>Learn: <a href="http://www.html5rocks.com" target="_blank">html5rocks.com</a></li>
           <li>Compatibility: <a href="http://chromestatus.com/">chromestatus.com</a>, <a href="http://caniuse.com/" target="_blank">caniuse.com</a></li>
-          <li><a href="http://code.google.com/chrome/chromeframe/" target="_blank">Google Chrome Frame</a></li>
-          <li>Twitter: <a href="http://twitter.com/chromiumdev" target="_blank">@ChromiumDev</a></li>
-          <li><a href="http://new.crbug.com" target="_blank">new.crbug.com</a></li>
+          
         </ul>
       </article>
 
       <article>
         <section class="flexcenter" style="height:95%">
-          <div data-config-logo style="float:none;height:155px;"></div>
+          <div data-config-logo style="float:none;height:235px;"></div>
           <h1 style="margin-bottom:0.5em;">Thanks! Questions?</h1>
           <p>
             @<a rel="author" data-config-twitter target="_blank"><span data-config-twitter></span></a>
@@ -794,7 +505,6 @@ function render(src) {
 
     </section>
 
-    <script src="http://webintents.org/webintents.js" async></script>
     <script src="js/config.js"></script>
     <script src="js/hide-slides.js"></script>
     <script src="js/slides.js"></script>
