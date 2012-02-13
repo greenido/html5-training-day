@@ -108,8 +108,8 @@ body {
   background: white url(../images/gdd2011_banner.png) 105% 99% no-repeat;
 }*/
 .slides.nobackground article:not(.fill) {
-  background: url(../images/gdd_logo.png) 98% 99% no-repeat,
-    /*url(/images/bubbles.png) 5% -125px no-repeat, */
+  background: 
+    /*url(../images/gdd_logo.png) 98% 99% no-repeat, url(/images/bubbles.png) 5% -125px no-repeat, */
     url(../images/colorbar.png) 0 91% repeat-x,
     white !important;
 }
@@ -178,8 +178,8 @@ body {
 /* Slide styles */
 
 article.biglogo {
-  background: url(/images/google_logo.png) 50% 50% no-repeat,
-    url(/images/gdd2011_banner.png) 105% 99% no-repeat, white;
+  background: url(../images/google_logo.png) 50% 50% no-repeat,
+    url(../images/gdd2011_banner.png) 105% 99% no-repeat, white;
 }
 
 /* Slides */
