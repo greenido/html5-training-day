@@ -78,7 +78,7 @@ Date: 10/16/2011
           </li>
           <li><label class="underline">Design</label> philosophy          
           <li>How to build mobile web app</li>
-          <li>Tips</li>
+          <li>Tips & Best practices</li>
         </ul>
       </article>
 
@@ -119,8 +119,8 @@ Date: 10/16/2011
         <h3>Mobile Browsers</h3>
         <p>Mobile is 95% WebKit
         </p>
+        <!-- TODO: remove it to style.css -->
         <style>
-          #TODO - remove it to style.css
           .top15 {
             position: relative;
             top: 15px;
@@ -137,6 +137,11 @@ Date: 10/16/2011
             position: relative;
             bottom: 70px;
             left: 30px;
+          }
+          .up335 {
+            position: relative;
+            bottom: 220px;
+            left: 235px;
           }
         </style>
         <div class="top15">Main missing feeatures:
@@ -161,27 +166,6 @@ Date: 10/16/2011
         </div>
       </article>
 
-
-      <!--
-
-      <article class="fill" style="background-image: url(images/frustrateduser.jpg)">
-      </article>
-
-        <dl>
-          <dt>action</dt>
-          <dd>Required. A verb describing the action to be performed</dd> 
-          <dt>type</dt>
-          <dd><em>Optional</em>. Mimetype filters</dd>
-          <dt>href</dt>
-          <dd><em>Optional</em>. If specified it will point to the action that is loaded 
-            when the user chooses the service.  If undefined, use the current page.</dd> 
-        </dl>
-
-
-      <article>
-        <q>Web Intents is a framework for client-side service discovery and inter-application communication</q>
-      </article>
-      -->
       <article>
         <h3>The case for Business</h3>
         <ul>
@@ -247,7 +231,9 @@ Date: 10/16/2011
       <article>
         <h3>Design - Per Device</h3>
         <p>Tablet != Phone != ...</p>
-        TODO
+        <div class="centered">
+          <img src="images/phone-tablet-not.png" alt="a web app for phone is not for tablet and vs/vs">
+        </div>
       </article>
 
       <article>
@@ -262,42 +248,43 @@ Date: 10/16/2011
       </article>
 
       <article class="fill">
-        TODO - Building
-        <section class="flexcenter" style="height:100%;">
-          <h1 class="white centered"><label class="underline">Rich</label> Multimedia</h1>
-        </section>
-        <img src="images/capabilities.jpg" style="opacity:0.90">
+        <h2>Building</h2>
+
+        <img src="images/building.jpg" style="opacity:0.90">
         <div class="source">
-          <a href="http://www.flickr.com/photos/aaronpk/5060305871/">http://www.flickr.com/photos/aaronpk/5060305871/</a>
+          <a href="http://www.flickr.com/photos/22746515@N02/4844476286/">http://www.flickr.com/photos/22746515@N02/4844476286/</a>
         </div>
       </article>
 
-
-      <article class="smaller">
-        <h3>Model view controller</h3>
+      <article>
+        <h3>Model View Controller</h3>
+        <div class="top15">
+          <ul>
+            <li>Fundamental pattern for separating concerns</li>
+            <li>Model handles data and server persistence layer View handles user input and rendering</li>
+            <li>Used to be on the server. Now moving to the thicker client.</li>                
+          </ul>
+        </div>
         <aside class="note">
           <section>
-            <ul>
-              <li>TODO</li>
-
-            </ul>
+            For more checkout this <a href="http://codebrief.com/2012/01/the-top-10-javascript-mvc-frameworks-reviewed/" target="_blank">
+              The Top 10 Javascript MVC Frameworks Reviewed
+            </a>
           </section>
         </aside>
-        <p>Fundamental pattern for separating concerns
-          Model handles data and server persistence layer View handles user input and rendering
-          Used to be on the server. Now moving to the thicker client.
-        </p>
-
       </article>
 
-      <article id="fullscreen-slide">
+      <article>
         <h3>Paradox of choice</h3>
+        <p class="centered" style="margin-bottom: 0.5em;">
+          There are many MVC frameworks </p>
+        <ul class="build">
+          <li><a href="http://addyosmani.github.com/todomvc/" target="_blabnk">
+              TodoMVC</a> - one app written in all of them Comparison blog post - a high level comparison</li>
+          <li>Use Amber.js / Backbone.js for relatively simple apps</li>
+          <li><img src="images/mvc-options.png" alt="js mvc options - too many"></li>
+        </ul>
 
-        <p class="centered" style="margin-top:2em;">
-          There are many MVC frameworks
-          TodoMVC - one app written in all of them Comparison blog post - a high level comparison
-          I use Backbone.js for relatively simple apps
-        </p>
       </article>
 
       <article>
@@ -305,19 +292,24 @@ Date: 10/16/2011
         <aside class="note">
           <section>
             <ul>
-              <li>TODO</li>
+              More on options of templating engines:
+              <li><a href="http://mustache.github.com/" target="_blank">http://mustache.github.com/</a></li>
+              <li><a href="http://beebole.com/pure/" target="_blank">beebole</a> </li>
             </ul>
           </section>
         </aside>
-        <p>Complex apps require complex DOM DOM manipulation is relatively slow
-          Answer: JS templating
-          1. Embed &lt;script id="my-template" type=" text/my-template-language"&gt; into HTML, with text contents of the template.
-          2. Use template library to populate template with data.
-        </p>
-        TODO
-
+        <ul>
+          <li>Complex apps require complex DOM</li>
+          <li>DOM manipulation is relatively slow</li>
+          <li>Answer: JS templating</li>
+          <ol>
+            <li>Embed
+              <pre>&lt;script id="my-template" type=" text/my-template-language"&gt; </pre>
+              into HTML, with text contents of the template.</li>
+            <li>Use template library to populate template with data.</li>
+          </ol>
+        </ul>
       </article>
-
 
 
       <article  class="smaller">
@@ -341,88 +333,84 @@ Date: 10/16/2011
       </article>
 
 
-      <!--
-        <article class="smaller" class="webrtc-slide">
-          <h3><code>Example</code></h3>
-            <pre>
-      var pc = new <b>PeerConnection</b>('STUN example.com:8000', onSignalingMessage);
-      
-      function onSignalingMessage(msg, source) {
-        // send message to the other side via the signaling channel.
-        pc.processSignalingMessage(msg);
-      }
-      
-      pc.onaddstream = function(e) {
-        remoteVideo.src = window.webkitURL.createObjectURL(e.stream);
-      };
-      
-      pc.onremovestream = function(e) {
-        video.src = '';
-      };
-      
-      window.navigator.webkitGetUserMedia('video,audio', function(localStream) {
-        localVideo.src = window.webkitURL.createObjectURL(localStream);
-        pc.addStream(localStream); // Start sending video
-      }, function(e) { ... });
-      </pre>
-        </article>
-      -->
+
 
       <article>
         <h3>CSS Frameworks</h3>
-        <p>Augmented CSS-style languages</p>
-        <ul class="build fade">
-          <li>$variables: true</li>
-          <li>.nesting { .allowed { font-color: bold; }} </li>
-          <li>mixins/inheritance</li>
-        </ul>
-        <p>Many variants of syntax, but basically the same. My preference: SCSS 
+        <div class="top15">
+          Augmented CSS-style languages
+          <ul>
+            <li>$variables: true</li>
+            <li>.nesting { .allowed { font-color: bold; }} </li>
+            <li>mixins/inheritance</li>
+          </ul>
+          <br/>
+          Many variants of syntax, but basically the same. My preference: <a href="http://sass-lang.com/">SCSS</a> 
 
-          <b>/ TODO - LESS/SASS</b>
-        </p>
+        </div>
+
       </article>
 
       <article>
         <h3>Layout - 1</h3>
         <p>
-          Best practice: avoid tables, relative positioning, absolute positioning, floats
-          Use CSS flex-box!
+          Best practice:
         </p>
+        <ul>
+          <li>Avoid: tables, absolute positioning, Relative positioning</li>
+          <li>Use CSS flex-box!</li>  
+        </ul>
+
         <pre>
-#flexbox { display: box; box-orient: horizontal;
-} #flexbox > p:nth-child(2), #flexbox > p:nth-child(3) {
-box-flex: 1;
-}
+          #flexbox { 
+            display: box; box-orient: horizontal;
+          } 
+          #flexbox > p:nth-child(2), 
+          #flexbox > p:nth-child(3) {
+            box-flex: 1;
+          }
         </pre>
-        Caveat: new API just landed, but relatively few changes
+        (!) Caveat: new API just landed, but relatively few changes
+        <aside class="note">
+          <section>
+            <img src="images/flex-box.png" alt="flex box css examples">
+          </section>
+        </aside>
       </article>
 
 
       <article>
         <h3>Layout - 2</h3>
-        <ul class="build fade">
-          <li>What about headers/footers? Use position: fixed; </li>
-          <li>How to scroll inside elements? Use overflow: scroll;</li>
-          <li>Inertial scrolling? (Note: iOS 5 only)
-            -webkit-overflow-scrolling: touch;</li>
-        </ul>
+        <div class="top15">
+          <ul class="build fade">
+            <li>What about headers/footers? 
+              <pre>Use position: fixed;</pre> </li>
+            <li>How to scroll inside elements? 
+              <pre>Use overflow: scroll;</pre></li>
+            <li>Inertial scrolling?
+              <pre>-webkit-overflow-scrolling: touch;</pre></li>
+          </ul>
+        </div>  
       </article>
 
-      <article class="smaller">
+      <article>
         <h3>Touch</h3>
         <p>
           Fingers != mouse. Design for multi-touch!
         </p>
-        <ul class="build fade">
+        <ul>
           <li>touchstart</li>
           <li>touchmove</li>
           <li>touchend</li>
         </ul>
-
-        <p>
+        <div style="font-size:80%; position:relative; top:200px">
           (!) Click delayed by 300ms on mobile. Use <a href="http://code.google.com/mobile/articles/fast_buttons.html" target="_blank">fast click.</a><br/>
-          More detail info:<a href="http://www.html5rocks.com/en/mobile/touch.html" target="_blank">Developing for Multi-Touch Web Browsers</a>
-        </p>
+          and <a href="http://www.html5rocks.com/en/mobile/touch.html" target="_blank">Developing for Multi-Touch</a>
+        </div>
+        <div class="up335">
+          <img src="images/touch.png" alt="touch options">
+        </div>
+
       </article>
 
       <article>
@@ -444,6 +432,7 @@ box-flex: 1;
           <li><a href="http://seleniumhq.org/" target="_blank">Selenium</a>
           </li>
         </ul>
+        <img src="images/mobile-tests.png" alt="mobile testing on real devices">
       </article>
 
       <article>
@@ -456,28 +445,6 @@ box-flex: 1;
         </ul>
       </article>
 
-      <!--
-        <article class="smaller">
-          <h3>Generating sound</h3>
-          <aside class="note">
-            <section class="centered">
-              <p><img src="images/audio-routing.png" style="height:200px"></p>
-            </section>
-          </aside>
-            <pre>
-      var sine = new Oscillator(DSP.SINE, 440, 1.0, 2048, 44100).generate(); // dsp.js
-      
-      var src = ctx.createBufferSource();
-      src.buffer = <b>ctx.createBuffer</b>(1 /*channels*/, 2048, 44100);
-      <b>src.buffer.getChannelData(0)</b>.set(sine);
-      <b>src.looping = true;</b>
-      
-      src.connect(ctx.destination);
-      src.noteOn(0);
-      </pre>
-          <iframe style="border:none;width:800px;height:250px;" src="http://www.htmlfivewow.com/demos/waveform-generator/index.html"></iframe>
-        </article>
-      -->
 
       <article class="nobackground fill">
         <h2 class="dark right shadow">chromestatus.com</h2>
@@ -497,11 +464,18 @@ box-flex: 1;
           <li>Code: <a href="http://code.google.com/p/bleedinghtml5/" target="_blank">bleedinghtml5.googlecode.com</a></li>
         </ul>
         <br>
-        TODO
-        <br>
+        
+        
         <ul>
           <li>Learn: <a href="http://www.html5rocks.com" target="_blank">html5rocks.com</a></li>
           <li>Compatibility: <a href="http://chromestatus.com/">chromestatus.com</a>, <a href="http://caniuse.com/" target="_blank">caniuse.com</a></li>
+          <li><a href="http://mustache.github.com/#demo">Mustache demo</a></li>
+          <li><a hrrf="http://codebrief.com/2012/01/the-top-10-javascript-mvc-frameworks-reviewed/">The Top 10 Javascript MVC Frameworks </a></li>
+          <li>Ideas</li>
+          <ul>
+            <li><a href="http://pttrns.com" target="_blank">http://pttrns.com</a></li>
+            <li><a href="http://mobile-patterns.com" target="_blank">http://mobile-patterns.com</a></li>
+          </ul>
 
         </ul>
       </article>
