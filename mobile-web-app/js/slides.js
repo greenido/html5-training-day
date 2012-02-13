@@ -16,7 +16,7 @@ window.cancelRequestAnimationFrame = window.cancelRequestAnimationFrame ||
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-const PERMANENT_URL_PREFIX = '/';
+const PERMANENT_URL_PREFIX = './';
 const SLIDE_CLASSES = ['far-past', 'past', 'current', 'next', 'far-next'];
 const PM_TOUCH_SENSITIVITY = 15;
 var curSlide;
