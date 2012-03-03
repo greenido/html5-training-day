@@ -28,8 +28,8 @@ window.slidesConfig = window.slidesConfig || {
     location: 'Tel Aviv, Israel',
 
     // Presentation Timer
-    date: new Date('Mar 1 2012 10:00'),
-    logo: './images/html5_logo_256.png',
+    date: new Date('Mar 4 2012 10:00'),
+    logo: './html5_logo_256.png',
     minutes: 50,
     warnAt: 10
   }
