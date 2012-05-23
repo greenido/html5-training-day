@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<!--
+Copyright 2012 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Made with love... @greenido
+
+Author: Ido Green (idog@google.com)
+Date: May 2012
+
+-->
+<html>
+  <head>
+    <title>Mobile Web App Stack</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|Droid+Sans+Mono&v2">
+    <link rel="icon" type="image/png" href="images/chrome-logo-tiny2.png">
+  </head>
+  <body style="display: none">
+
+    <section class="slides layout-regular">
+
+      <!--<article class='biglogo'></article>-->
+
+
+      <article id="title-slide">
+        <div>
+          <div data-config-logo></div>
+          <h1>Mobile Web App Stack</h1>
+          <p data-config-name></p>
+          <p class="info">
+            <time datetime="YYYY-MM-DD" data-config-date>MM DD, 2012</time> &nbsp; - &nbsp; 
+            <span data-config-location></span>
+          </p>
+          <img data-config-map class="rounded" title="Of course we're using Geolocation!" 
+               alt="Of course we're using Geolocation!">
+        </div>
+      </article>
+
+      <article id="who">
+        <h3>Who?</h3>
+        <p>
+          <img class="avatar rounded" data-config-pic>
+        </p>
+        <p>
+          <a rel="author" data-config-gplus target="_blank">
+            <img src="http://www.google.com/images/icons/ui/gprofile_button-44.png" width="44" height="44">
+          </a> +<a rel="author" data-config-gplus target="_blank"><span data-config-name></span></a>
+        </p>
+        <br>
+        <p>
+          <a rel="author" data-config-twitter target="_blank" style="margin-left:-8px;">
+            <img src="images/twitter_newbird_blue.png" width="58" height="58">
+          </a> @ <a rel="author" data-config-twitter target="_blank" style="margin-left:-8px;"><span data-config-twitter></span></a>
+        </p>
+        <br>
+        <p>
+          <ul>
+            <li>Blog: <a data-config-blog target="_blank"><span data-config-blog></span></a></li>
+            <li>
+              Slides: <a href="http://ido-green.appspot.com/" target="_blank">ido-green.appspot.com</a>
+            </li>
+            <li>Hash Tag: <strong>#HTML5m</strong></li>
+        </p>
+      </article>
+
+      <article>
+        <h3>Agenda</h3>
+        <ul class="build fade">
+          <li>The State of the mobile web
+          </li>
+          <li><label class="underline">Design</label> philosophy          
+          <li>How to <label class="underline">build</label> mobile web app</li>
+          <li>Tips & Best practices</li>
+        </ul>
+      </article>
+
+      <article class="fill">
+        <section class="flexcenter" style="height:100%;">
+          <h1 class="red centered"><strong data-blowup>WARNING!</strong></h1>
+        </section>
+      </article>
+      <script>
+        (function() {
+          var el = document.querySelector('[data-blowup]');
+          el.addEventListener('click', function(e) {
+            this.classList.toggle('blowup');
+            this.parentNode.parentNode.parentNode.classList.toggle('blowup-shadow');
+          }, false);
+        })();
+      </script>
+
+      <article id="slide-pagevisibility">
+        <h3>Mobile trends</h3>
+        <p>Mobile internet usage to overtake desktop by 2014</p>
+        <br/>
+        <aside class="note">
+          <section>
+            <ul>
+              <li>Chitika claims: 
+                <a href="http://insights.chitika.com/2012/ios-passes-mac-os-in-share-of-web-traffic-propelled-by-record-sales-for-mobile-and-tablet-devices/" target="_blank">iOS passes Mac OS in Share of Web Traffic Propelled by Sales for Mobile and Tablet Devices</a></li>
+              <li>The pace is getting stronger</li>
+            </ul>
+          </section>
+        </aside>
+
+        <div class="centered">
+          <img src="./images/global-mobile-devices-2015.png" 
+               alt="global mobile devices pass desktop in 2015" class="reflect">
+        </div>
+        .
+      </article>
+
+      <article>
+        <h3>Mobile Browsers</h3>
+        <p>Mobile is ~95% WebKit
+        </p>
+
+        <div class="top15">Main missing features:
+          <ul>
+            <li>WebGL</li>
+            <li>Camera API</li>
+            <li>IndexedDB</li>
+            <li>Web Audio</li>
+          </ul>
+        </div>
+
+        <aside class="note">
+          <section>
+            <img src="./images/stats-mobile_browser-na-monthly-201105-201205.jpg"
+                alt="mobile browsers stats for may 2011 to may 2012" class="reflect">
+            <ul>
+              <li>Last 12 months in North America: 
+                <a href="http://gs.statcounter.com/#mobile_browser-na-monthly-201105-201205" target="_blank">
+                  Android 37%, iOS 45%, BlackBarry 6%</a></li>
+              
+            </ul>
+          </section>
+        </aside>
+        .
+      </article>
+
+
+     
+
+
+      <article>
+        <h1>Web Vs. Native</h1>
+        <div class="top15">
+          <ul class="build fade">
+            <li>Web as a unified platform</li>
+            <li>Native is a <b>moving</b> target: iOS, Android, WP7, etc</li>
+            <li>Native pushes the boundary - APIs that are closer to the metal</li>
+            <li>Standardized web moves more slowly, but catching up!</li>
+          </ul>
+        </div>
+      </article>
+
+      <article>
+        <h3>The case for Business</h3>
+        <ul>
+          <li>Largely data-driven applications!</li>
+          <ul>
+            <li><a href="http://app.ft.com" target="_blank">app.ft.com</a></li>
+            <li><a href="http://workflowy.com" target="_blank">workflowy.com</a></li>
+            <li><a href="http://mobile.twitter.com" target="_blank">mobile.twitter.com</a></li>
+          </ul>
+          <li>The mobile web is <a href="http://www.emarketer.com/Article.aspx?R=1008010" target="_blank">ready for apps.</a></li>
+          <li>Users may even prefer web to native - Some reports claim that 
+            <a href="http://www.readwriteweb.com/archives/87_of_connected_consumers_prefer_websites_mobile_s.php" target="_blank">87% actually do.</a></li>
+
+        </ul>
+      </article>
+
+      <article id="android-intents-slide">
+        <h3>Good Examples</h3>
+
+        <p class="centered">
+          <img src="images/good-mobile-apps.png" alt="good mobile apps examples" class="reflect">
+        </p>
+
+        <aside class="note centered">
+          <section>
+            <img src="images/food-mobile.png" alt="Food mobile web app">
+          </section>
+        </aside>
+        .
+      </article>
+
+      <article class="fill">
+        <h2>Design</h2>
+        <img src="images/design.png" style="opacity:0.90">
+      </article>
+
+      
+      <article>
+        <h3>Design Tips</h3>
+        <p>Plan / Think about it up-front! <br/>
+          Don't let "web" and "enterprise" be an excuse for poor UX
+        </p>
+        <pre class="centered">
+            Be inspired by mobile patterns <br/>
+            e.g. <a href="http://jsfiddle.net/michaelhue/7NAvm/7/light/" target="_blank">Path</a>, Flipboard, Twitter etc'. 
+        </pre>
+        <h4>Don't reinvent the wheel</h4>
+        <ul>
+          <li><a href="http://pttrns.com" target="_blank">http://pttrns.com</a></li>
+          <li><a href="http://mobile-patterns.com" target="_blank">http://mobile-patterns.com</a></li>
+        </ul>
+        <aside class="note centered">
+          <section>
+            <img src="images/mobile-path.png" alt="path mobile app">
+          </section>
+        </aside>
+        .
+      </article>
+
+      <article>
+        <h3>Design - Low fidelity</h3>
+        <p>Start with the UX<br/>E.g. <a href="http://www.balsamiq.com/" target="_blank">Balsamiq</a></p>
+        
+        <div class="centered up40">
+          <img src="images/mockup.png" alt="mockup for our wonderful web app">
+        </div>
+      </article>
+
+
+      <article>
+        <h3>Design - Per Device</h3>
+        <p>Tablet != Phone != ...</p>
+        <div class="centered">
+          <img src="images/phone-tablet-not.png" alt="a web app for phone is not for tablet and vs/vs">
+        </div>
+      </article>
+
+      <article>
+        <h3>Philosophy: Adaptive Apps</h3>
+
+        <ul class="build fade">
+          <li>Too hard to use one DOM tree for all form factors</li>
+          <li>Adaptive apps – Custom views and templates for each form factor, shared model</li>
+          <li>Use responsive design within the form factor (eg. same layout on iPad 4:3 and Galaxy Tablet 16:9)</li>
+          <li><a href="http://mobilewebbestpractices.com/resources/">Mobile Web Best Practices</a></li>
+        </ul>
+
+      </article>
+
+      <article class="fill">
+        <h2>Building</h2>
+
+        <img src="images/building.jpg" style="opacity:0.90">
+        <div class="source">
+          <a href="http://www.flickr.com/photos/22746515@N02/4844476286/">http://www.flickr.com/photos/22746515@N02/4844476286/</a>
+        </div>
+      </article>
+
+      <article>
+        <h3>Model View Controller</h3>
+        <div class="top15">
+          <ul>
+            <li>Fundamental pattern for separating concerns</li>
+            <li>Model handles data and server persistence layer </li>
+            <li>View handles user input and rendering</li>
+            <li>Used to be on the server. Now moving to the thicker client.</li>                
+
+          </ul>
+        </div>
+        <aside class="note">
+          <section>
+            For more checkout this <a href="http://codebrief.com/2012/01/the-top-10-javascript-mvc-frameworks-reviewed/" target="_blank">
+              The Top 10 Javascript MVC Frameworks Reviewed
+            </a>
+          </section>
+        </aside>
+        .
+      </article>
+
+      <article>
+        <h3>Paradox of choice</h3>
+        <p class="centered" style="margin-bottom: 0.5em;">
+          There are many MVC frameworks </p>
+        <ul class="build">
+          
+          <li><a href="http://emberjs.com/">Ember.js</a> - Don't waste time making trivial choices. </li>
+          <li><a href="http://documentcloud.github.com/backbone/">Backbone.js</a> - gives structure to web applications by providing models with key-value binding, collections and views</li> 
+          <li><a href="http://angularjs.org/">Angular.js</a> - AngularJS lets you extend HTML vocabulary for your application.</li>
+
+          <li><a href="http://addyosmani.github.com/todomvc/" target="_blabnk">
+              TodoMVC</a> - one app written in all of them Comparison blog post
+               - a high level comparison</li>
+          
+        </ul>
+        <aside class="note">
+          <section>
+            <img src="images/mvc-options.png" alt="js mvc options - too many">
+          </section>
+        </aside>
+        .
+      </article>
+
+      <article>
+        <h3>Templating engines - 1</h3>
+        <aside class="note">
+          <section>
+            <ul>
+              More on options of templating engines:
+              <li><a href="http://mustache.github.com/" target="_blank">http://mustache.github.com/</a></li>
+              <li><a href="https://github.com/janl/mustache.js">Mustache for JS</a></li>
+              <li><a href="http://beebole.com/pure/" target="_blank">beebole</a> </li>
+            </ul>
+          </section>
+        </aside>
+        <ul>
+          <li>Complex apps require complex DOM</li>
+          <li>DOM manipulation is relatively slow</li>
+          <li>Answer: JS templating</li>
+          <ol>
+            <li>Embed
+              <pre>&lt;script id="my-template" type=" text/my-template-language"&gt; </pre>
+              into HTML, with text contents of the template.</li>
+            <li>Use template library to populate template with data.</li>
+          </ol>
+        </ul>
+        .
+      </article>
+
+
+      <article  class="smaller">
+        <h3>Templating engines - 2</h3>
+        <p class="centered"><em>
+            <label class="underline">Mustache.js</label> is a logic-less templating engine</em>
+        </p>
+        <br>
+        <code>Example</code>
+        <pre>
+          {{#items}} 
+              {{#link}}&lt;li&gt;&lt;a href="{{url}}"&gt;{{name}}&lt;/a&gt;&lt;/li&gt;{{/link}}
+          {{/items}}
+            +
+            {"items": [{"name": "green", "link": true, "url": "#Green"},
+                       {"name": "blue", "link": true, "url": "#Blue"}], }
+            =
+           &lt;li&gt;&lt;a href="#Green"&gt;green&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="#Blue"&gt;blue&lt;/a&gt;&lt;/li&gt;
+        </pre>
+      </article>
+
+      <article>
+        <h3>CSS Frameworks</h3>
+        <div class="top15">
+          Augmented CSS-style languages
+          <ul>
+            <li>$variables: true</li>
+            <li>.nesting { .allowed { font-color: bold; }} </li>
+            <li>mixins/inheritance</li>
+          </ul>
+          <br/>
+          Many variants of syntax, but basically the same. 
+          My preference: <a href="http://sass-lang.com/">SCSS</a> 
+          <br/>Also checkout: <a href="http://lesscss.org/">Less css</a>
+        </div>
+
+      </article>
+
+      <article>
+        <h3>Layout - 1</h3>
+        <p>
+          Best practice:
+        </p>
+        <ul>
+          <li>Avoid: tables, absolute positioning, Relative positioning</li>
+          <li>Use CSS flex-box!</li>  
+        </ul>
+
+        <pre>
+          #flexbox { 
+            display: box; box-orient: horizontal;
+          } 
+          #flexbox > p:nth-child(2), 
+          #flexbox > p:nth-child(3) {
+            box-flex: 1;
+          }
+        </pre>
+        (!) Caveat: new API just landed, but relatively few changes
+        <aside class="note">
+          <section>
+            <h3>The building blocks</h3>
+            <img src="images/flex-box.png" alt="flex box css examples">
+            <br/>
+            <a href="http://slides.html5rocks.com/#form-types-mobile">Form fields type for mobile</a>
+          </section>
+
+        </aside>
+        <br/>
+        .
+      </article>
+
+
+      <article>
+        <h3>Layout - 2</h3>
+        <div class="top15">
+          <ul class="build fade">
+            <li>What about headers/footers? 
+              <pre>Use position: fixed;</pre> </li>
+            <li>How to scroll inside elements? 
+              <pre>Use overflow: scroll;</pre></li>
+            <li>Inertial scrolling?
+              <pre>-webkit-overflow-scrolling: touch;</pre></li>
+          </ul>
+        </div>  
+      </article>
+
+      <article>
+        <h3>Touch</h3>
+        <p>
+          Fingers != mouse. Design for multi-touch!
+        </p>
+        <ul>
+          <li>touchstart</li>
+          <li>touchmove</li>
+          <li>touchend</li>
+        </ul>
+        <div style="font-size:80%; position:relative; top:200px">
+          (!) Click delayed by 300ms on mobile. Use <a href="http://code.google.com/mobile/articles/fast_buttons.html" target="_blank">fast click.</a><br/>
+          and <a href="http://www.html5rocks.com/en/mobile/touch.html" target="_blank">Developing for Multi-Touch</a>
+        </div>
+        <div class="up335">
+          <img src="images/touch.png" alt="touch options">
+        </div>
+
+      </article>
+
+      <article>
+        <h3>Offline First</h3>
+        <ul>
+          <li>Storing assets: AppCache, Filesystem Storing data: localStorage, WebSQL, IndexedDB</li>
+          <li>Offline first – pretend that there's no internet connection, implement a sync layer that works only when online.</li>
+          <li><a href="https://developer.mozilla.org/en/Online_and_offline_events">Offline/online events:</a> 
+            <pre>navigator.onLine & window.(ononline|onoffline)</pre>
+          </li>
+          <li><a href="http://greenido.wordpress.com/2011/11/29/convert-your-websql-to-indexeddb/">Convert WebSQL To IndexedDB Tutorial</a></li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Debugging</h3>
+        <ul>
+          <li>Remote debugging hack with <a href="http://jsconsole.com/remote-debugging.html" target="_blank">jsconsole.com</a></li>
+          <li><a href="https://developers.google.com/chrome/mobile/docs/debugging">Chrome for Android.</a></li>
+          <li>Opera also <a href="http://dev.opera.com/articles/view/remote-debugging-with-opera-dragonfly/">supports.</a></li>
+          <li><a href="http://lucasr.org/2012/03/28/remote-debugging-in-firefox-mobile/">Firefox mobile</a> got a new option.</li>
+          <li><a href="http://www.iwebinspector.com/">iWebInspector</a> is a free tool to debug, profile and inspect web applications running on iOS Simulator</li>
+          <li><a href="http://labs.adobe.com/technologies/shadow/">Adobe Shadow</a></li>
+        </ul>
+       
+      </article>
+
+      <article>
+        <h3>Testing</h3>
+        <ul>
+          <li>MVC provides separation of concerns</li>
+          <li>Qunit - test your models</li>
+          <li><a href="http://seleniumhq.org/" target="_blank">Selenium</a> and its mobile option <a href="http://code.google.com/p/selenium/wiki/RemoteWebDriver">Remote Web Driver</a>
+          </li>
+        </ul>
+        <img src="images/mobile-tests.png" alt="mobile testing on real devices">
+      </article>
+
+        <article>
+        <h3>Optimization</h3>
+        <ul>
+          <li><a href="http://www.blaze.io/blaze-feo-for-mobile/">Blaze.io for mobile</a></li>
+          <li><a href="http://stevesouders.com/mobileperf/mobileperfbkm.php">Mobile Perf</a></li>
+          <li>In WebKit
+            <code>--remote-debugging-port=1337</code></li>
+        </ul>
+         <img src="http://devtools-11.appspot.com/images/remotedebugging.png" width="792">
+      </article>
+
+
+      <article>
+        <h3>Tips and tricks</h3>
+        <ul>
+          <li>Try tech stack like: <a href="http://walmartlabs.github.com/thorax/" target="_blank">thorax.js</a></li>
+          <li>Enable Safari console for logging on iOS (Settings -> Safari -> Developer)</li>
+          <li>Simulate touch events on desktop with <a href="http://smus.com/multi-touch-browser-patch" target="_blank">MagicTouch.js</a></li>
+          <li>Simulate touch events using Chrome DevTool - Canary</li>
+          <li>Remote debugging hack with <a href="http://jsconsole.com/remote-debugging.html" target="_blank">jsconsole.com</a></li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>It's all about speed</h3>
+        <ul>
+          <li>"...You can’t manage what you can’t mesure."</li>
+          <li>You will lose 13% of your users after 2sec! </li>
+          <li>You will lose 25% of your users after 4sec of load time.</li>
+          <li>You got more then <a href="http://www.browserscope.org/?category=network">’2 connections’</a> on modern mobile browsers</li>
+          <li>For more: <a href="http://greenido.wordpress.com/2012/01/01/mobile-web-performance/" target="_blank">Mobile Web Performance</a></li>
+        </ul>
+      </article>
+      
+      
+
+      <article class="nobackground fill">
+        <h2 class="dark right shadow">chromestatus.com</h2>
+        <iframe src='http://chromestatus.com'></iframe>
+      </article>
+
+      <article class="nobackground fill">
+        <h2 class="dark right shadow">updates.html5rocks.com</h2>
+        <iframe src='http://updates.html5rocks.com'></iframe>
+      </article>
+
+
+      <article class="smaller">
+        <h3>Resources</h3>
+        <ul>
+          <li>Slides: <a href="http://ido-green.appspot.com" target="_blank">ido-green.appspot.com</a></li>
+          <li>Code: <a href="https://github.com/greenido/" target="_blank">github.com/greenido/</a></li>
+        </ul>
+        <br>
+        
+        <ul>
+          <li>Learn: <a href="http://www.html5rocks.com" target="_blank">html5rocks.com</a></li>
+          <li>Compatibility: <a href="http://chromestatus.com/" target="_blank">chromestatus.com</a>, 
+            <a href="http://caniuse.com/" target="_blank">caniuse.com</a></li>
+          <li><a href="http://mustache.github.com/#demo" target="_blank">Mustache demo</a></li>
+          <li><a hrrf="http://codebrief.com/2012/01/the-top-10-javascript-mvc-frameworks-reviewed/" target="_blank">
+              The Top 10 Javascript MVC Frameworks </a></li>
+          <li>Ideas</li>
+          <ul>
+            <li><a href="http://pttrns.com" target="_blank">http://pttrns.com</a></li>
+            <li><a href="http://mobile-patterns.com" target="_blank">http://mobile-patterns.com</a></li>
+          </ul>
+        </ul>
+      </article>
+
+      <article>
+        <section class="flexcenter" style="height:95%">
+          <div data-config-logo style="float:none;height:235px;"></div>
+          <h1 style="margin-bottom:0.5em;">Thanks! Questions?</h1>
+          <p>
+            @<a rel="author" data-config-twitter target="_blank"><span data-config-twitter></span></a>
+            &nbsp;
+            +<a rel="author" data-config-gplus target="_blank"><span data-config-name></span></a>
+          </p>
+        </section>
+      </article>
+
+      <article>
+        <section class="flexcenter">
+          <div id="chrome-logo">
+            <div id="colors">
+              <div id="white_shell">
+                <div id="green" class="leaf"></div>
+                <div id="yellow" class="leaf"></div>
+                <div id="yellow2" class="leaf"></div>
+                <div id="red" class="leaf"></div>
+                <div id="blue_core"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+
+    </section>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/hide-slides.js"></script>
+    <script src="./js/slides.js"></script>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-27750723-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+    <!--[if IE]>
+    <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+    <![endif]-->
+
+  </body>
+</html>
